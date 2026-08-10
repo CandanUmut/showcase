@@ -1,0 +1,64 @@
+{
+  "username": "CandanUmut",
+  "site": "https://candanumut.github.io/showcase",
+  "title": "Umut Candan — Shipped Work",
+  "tagline": "Small web apps that do one thing, live in the browser, and need no account.",
+  "categories": {
+    "Mind & Focus": [
+      "focus",
+      "productivity",
+      "mental-health",
+      "meditation",
+      "habits",
+      "cognition",
+      "brain-training"
+    ],
+    "Learning & Practice": [
+      "education",
+      "learning",
+      "quiz",
+      "flashcards",
+      "training",
+      "developer-tools",
+      "cli"
+    ],
+    "Simulations & Models": [
+      "simulation",
+      "physics",
+      "math",
+      "modeling",
+      "engine",
+      "science"
+    ],
+    "Games": ["game", "gamedev", "arcade", "puzzle"],
+    "Social & Networks": [
+      "social",
+      "social-network",
+      "community",
+      "decentralized",
+      "privacy",
+      "supportive",
+      "transparent",
+      "p2p"
+    ],
+    "Essays & Research": [
+      "essay",
+      "research",
+      "long-read",
+      "awareness",
+      "philosophy",
+      "ethics"
+    ],
+    "Faith & Practice": ["islam", "faith", "prayer", "spiritual", "quran"]
+  },
+  "categoryBlurbs": {
+    "Mind & Focus": "Tools for attention, calm, and the habits that hold a day together.",
+    "Learning & Practice": "Things you use repeatedly to get measurably better at something.",
+    "Simulations & Models": "Systems you can poke at to see how the rules play out.",
+    "Games": "Short, playable, no install.",
+    "Social & Networks": "Experiments in connecting people without the usual extraction.",
+    "Essays & Research": "Arguments and evidence, laid out to be read.",
+    "Faith & Practice": "Practical companions for daily religious practice.",
+    "Other": "Projects that haven't found their shelf yet."
+  }
+}

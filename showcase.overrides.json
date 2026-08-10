@@ -1,0 +1,352 @@
+{
+  "_comment": "Keyed by repo name. Anything set here wins over auto-derived data. Fields: title, blurb, category, topics, image, url, featured, hidden.",
+
+  "ClearMind": {
+    "title": "ClearMind",
+    "blurb": "Five minutes of thinking practice a day. Everyone gets the same puzzles on the same date, so you can compare your judgement against yesterday's and against other people's.",
+    "category": "Mind & Focus",
+    "topics": ["cognition", "habits", "daily", "no-account"],
+    "featured": true
+  },
+  "Habitcheck": {
+    "title": "Habitcheck",
+    "blurb": "Tick off your habits in a couple of taps and watch the streak build. Everything stays in your browser — no sign-up, works offline.",
+    "category": "Mind & Focus",
+    "topics": ["habits", "offline", "privacy"]
+  },
+  "Pomodoro": {
+    "title": "Focus Rooms",
+    "blurb": "A pomodoro timer you can share. Open a room, send the link, and everyone works through the same 25 minutes together.",
+    "category": "Mind & Focus",
+    "topics": ["focus", "productivity", "multiplayer"]
+  },
+  "Breath_aurora": {
+    "title": "Breath Aurora",
+    "blurb": "Guided breathing, mudras and short movement sequences, with a visual that paces your inhale and exhale so you don't have to count.",
+    "category": "Mind & Focus",
+    "topics": ["meditation", "breathing", "wellbeing"]
+  },
+  "complete_human": {
+    "title": "The Complete Human",
+    "blurb": "A daily check-in across eight areas of life — body, mind, work, relationships and the rest — so progress in one doesn't quietly cost you another.",
+    "category": "Mind & Focus",
+    "topics": ["personal-development", "habits", "tracking"]
+  },
+  "growth": {
+    "title": "GrowthPath",
+    "blurb": "A growth tracker for people who ship. Set goals across career, craft, reach and character, then log the small things that actually move them.",
+    "category": "Mind & Focus",
+    "topics": ["personal-development", "goals", "tracking"]
+  },
+  "Transformyourlife": {
+    "title": "Transform Your Life",
+    "blurb": "A gentle companion for changing a habit you're stuck in — daily steps, relapse-aware, and never scolding.",
+    "category": "Mind & Focus",
+    "topics": ["habits", "recovery", "wellbeing"]
+  },
+  "Addiction_test": {
+    "title": "Addiction Check",
+    "blurb": "A self-check for the modern attachments — phone, food, spending, scrolling. Scores each area so you can see which one is actually the problem.",
+    "category": "Mind & Focus",
+    "topics": ["self-assessment", "habits", "awareness"]
+  },
+  "Unmasking_sexual_engineered": {
+    "title": "Unmasking",
+    "blurb": "A recovery companion for porn and compulsive habits: what's being engineered to hook you, and a practical route back to your own attention.",
+    "category": "Mind & Focus",
+    "topics": ["recovery", "habits", "awareness"]
+  },
+  "Pusula": {
+    "title": "Pusula",
+    "blurb": "A values compass for hard moments. Daily quests, a focus list, and a panic button that gives you something to do in the ten seconds that matter.",
+    "category": "Mind & Focus",
+    "topics": ["recovery", "values", "offline"]
+  },
+  "Joyofliving": {
+    "title": "Joy of Living",
+    "blurb": "A thirty-question check-in on how life is actually going, in English or Turkish. Takes five minutes, repeats weekly, and nothing leaves your device.",
+    "category": "Mind & Focus",
+    "topics": ["self-assessment", "wellbeing", "bilingual"]
+  },
+  "Howold": {
+    "title": "Body & Mind Age",
+    "blurb": "Answer questions about how you sleep, move, feel and connect, and get an estimate of how old your body and mind are behaving — separate from your birthday.",
+    "category": "Mind & Focus",
+    "topics": ["self-assessment", "health", "bilingual"]
+  },
+  "protocol": {
+    "title": "Close the Ramp",
+    "blurb": "A structured protocol for shutting down the on-ramps to a habit before willpower is needed. Works offline, in Turkish and English.",
+    "category": "Mind & Focus",
+    "topics": ["recovery", "offline", "bilingual"]
+  },
+  "SwiftReader": {
+    "title": "SwiftReader",
+    "blurb": "Read faster by flashing one word at a time. Load a PDF or EPUB, keep a local library, take notes — all in the browser, nothing uploaded.",
+    "category": "Mind & Focus",
+    "topics": ["reading", "privacy", "pdf", "epub"]
+  },
+
+  "boppo": {
+    "title": "BopGrid",
+    "blurb": "Hit the lit buttons before the timer runs out. Four modes, including one where the rule changes on you mid-game.",
+    "category": "Games",
+    "topics": ["game", "reaction", "arcade"]
+  },
+  "hexodrop": {
+    "title": "Hex Hive Drop",
+    "blurb": "Tetris on a hexagonal hive that rotates under you. Gravity follows the glowing wall, so the board you were planning for keeps turning.",
+    "category": "Games",
+    "topics": ["game", "puzzle", "arcade"],
+    "featured": true
+  },
+  "zombie_game": {
+    "title": "Zombie Tap Defense",
+    "blurb": "Tap zombies to shoot them, survive the wave, spend the money on turrets and upgrades. Then the boss shows up.",
+    "category": "Games",
+    "topics": ["game", "arcade", "mobile"]
+  },
+  "Highorlow": {
+    "title": "HighLow 21",
+    "blurb": "Higher or lower, with a card between 1 and 21 and a countdown. Make a room, share the code, and race friends for points.",
+    "category": "Games",
+    "topics": ["game", "multiplayer", "cards"]
+  },
+  "Mathbomb": {
+    "title": "Math Bomb",
+    "blurb": "Answer the sum before the bomb goes off in your hands — then throw it to someone else in the room.",
+    "category": "Games",
+    "topics": ["game", "multiplayer", "math"]
+  },
+  "roulette": {
+    "title": "Rus Ruleti",
+    "blurb": "A party game of nerve. Set the chamber count, share the room code, spin, and take turns pulling the trigger.",
+    "category": "Games",
+    "topics": ["game", "multiplayer", "party"]
+  },
+  "newbrotato": {
+    "title": "Nova Arena 3D",
+    "blurb": "A rogue-survivor arena in 3D: waves close in, you pick an upgrade each level, and a boss meter fills while you dash between them.",
+    "category": "Games",
+    "topics": ["game", "3d", "roguelite"]
+  },
+  "3dbrotato": {
+    "title": "Nova Arena 3D · Jump Build",
+    "blurb": "The jumping variant of Nova Arena — same wave survival, but the terrain matters and you vault obstacles instead of dashing past them.",
+    "category": "Games",
+    "topics": ["game", "3d", "roguelite"]
+  },
+  "Brotatohtml": {
+    "title": "Nova Arena",
+    "blurb": "The original flat-plane version: one endless world, twin-stick movement, and upgrades every level. A single HTML file.",
+    "category": "Games",
+    "topics": ["game", "roguelite", "single-file"]
+  },
+  "Minetogether": {
+    "title": "DeepMine Online",
+    "blurb": "Send miners down through layers of rock, upgrade the drills and the elevator, and climb a shared leaderboard — or dig solo when you're offline.",
+    "category": "Games",
+    "topics": ["game", "idle", "multiplayer"]
+  },
+  "Tournament": {
+    "title": "Tournament",
+    "blurb": "Type in the teams, pick a format, and get a bracket you can share by link and update as results come in. Built for someone running an event from their phone.",
+    "category": "Games",
+    "topics": ["tournament", "brackets", "offline"]
+  },
+
+  "World": {
+    "title": "World",
+    "blurb": "Walk, drive, sail or fly through a stylised version of the actual planet — real buildings, roads, rivers and terrain pulled from OpenStreetMap.",
+    "category": "Worlds & Simulations",
+    "topics": ["simulation", "3d", "openstreetmap"],
+    "featured": true
+  },
+  "fractaluni": {
+    "title": "Fractal Universe",
+    "blurb": "Fly out to a galaxy, pick a star, drop into its system, then land and walk on a planet that generates its terrain, water and wildlife as you arrive.",
+    "category": "Worlds & Simulations",
+    "topics": ["simulation", "procedural", "3d"],
+    "featured": true
+  },
+  "pru_simulation_engine": {
+    "title": "PRU Universe",
+    "blurb": "A physics sandbox built on a lattice of cells that each hold mass and geometry state, so you can watch structure emerge from local rules.",
+    "category": "Worlds & Simulations",
+    "topics": ["simulation", "physics", "research"]
+  },
+  "cosmic-sandbox": {
+    "title": "Cosmic Sandbox",
+    "blurb": "Build a star system, get the conditions right for life, and keep it going as the universe expands around you.",
+    "category": "Worlds & Simulations",
+    "topics": ["simulation", "space", "sandbox"]
+  },
+  "Consciousparticle": {
+    "title": "Conscious Particle",
+    "blurb": "Start as a mote drifting between gravity wells, absorb energy, and evolve into something more complicated. Spore, compressed into a browser tab.",
+    "category": "Worlds & Simulations",
+    "topics": ["simulation", "evolution", "3d"]
+  },
+  "earth-sim": {
+    "title": "Earth Sim",
+    "blurb": "Take charge of a country and see what your policy choices do to its people, its economy and its neighbours over the following decades.",
+    "category": "Worlds & Simulations",
+    "topics": ["simulation", "strategy", "policy"]
+  },
+  "Scaleuniverse": {
+    "title": "Scale of the Universe",
+    "blurb": "Zoom continuously from below the atom to the edge of the observable universe, and see where you sit on the way past.",
+    "category": "Worlds & Simulations",
+    "topics": ["visualization", "science", "bilingual"]
+  },
+
+  "code-trainer": {
+    "title": "Python Interview Trainer",
+    "blurb": "Learn Python in small steps, then practise on interview-style problems. Your code actually runs in the browser, so there's nothing to install.",
+    "category": "Learning",
+    "topics": ["python", "learning", "interview-prep"],
+    "featured": true
+  },
+  "RisksofAI": {
+    "title": "AIAware",
+    "blurb": "A course on what AI can and can't do, where it goes wrong, and how to work with it. Badges as you go, no account needed.",
+    "category": "Learning",
+    "topics": ["ai", "education", "literacy"]
+  },
+  "marriagequiz": {
+    "title": "Hayırlısı",
+    "blurb": "A compatibility questionnaire built on marriage research rather than vibes — designed to show you your own assumptions before you commit to someone.",
+    "category": "Learning",
+    "topics": ["quiz", "relationships", "research-backed"]
+  },
+  "Quizroom": {
+    "title": "Ortak Quiz",
+    "blurb": "Everyone in the room writes questions first, then you all take the quiz at once and see the scoreboard. Good for classrooms and long car journeys.",
+    "category": "Learning",
+    "topics": ["quiz", "multiplayer", "classroom"]
+  },
+
+  "housing": {
+    "title": "The Housing Crisis",
+    "blurb": "Why housing costs what it does, with the data behind each claim and calculators that let you check the argument against your own city.",
+    "category": "Essays & Investigations",
+    "topics": ["research", "data", "housing"]
+  },
+  "Animalwellfare": {
+    "title": "The True Cost",
+    "blurb": "What US farm animal welfare law actually requires, where the gaps are, and what closing them would cost. Presented as a readable paper with the sources attached.",
+    "category": "Essays & Investigations",
+    "topics": ["research", "policy", "bilingual"]
+  },
+  "dontforget": {
+    "title": "Don't Forget",
+    "blurb": "A documented account of systemic abuse and the institutional failures around it, assembled so the record stays findable.",
+    "category": "Essays & Investigations",
+    "topics": ["research", "documentation", "accountability"]
+  },
+  "Climatechange": {
+    "title": "Climate Reality Dashboard",
+    "blurb": "Pick your city and see its real temperature trend, air quality, rainfall and flood risk — the climate argument, localised to where you live.",
+    "category": "Essays & Investigations",
+    "topics": ["data", "climate", "dashboard"]
+  },
+  "loveofwisdom": {
+    "title": "Love of Wisdom",
+    "blurb": "A map of philosophy organised by question rather than by philosopher, so you can see where thinkers who never met landed on the same answer.",
+    "category": "Essays & Investigations",
+    "topics": ["philosophy", "reference", "map"]
+  },
+  "Truth-Knowability-Ethics-Benefit": {
+    "title": "Truth · Ethics · Benefit",
+    "blurb": "A working tool for deliberating hard decisions: weigh what's true, what's right and what actually helps, and see where those three pull apart.",
+    "category": "Essays & Investigations",
+    "topics": ["philosophy", "ethics", "framework"]
+  },
+  "hakikat_ucgeni": {
+    "title": "Hakikat Üçgeni",
+    "blurb": "A long study, in Turkish, of the three classical sources of temptation — the self, the world, and the devil — and how they reinforce each other.",
+    "category": "Essays & Investigations",
+    "topics": ["research", "turkish", "long-read"]
+  },
+
+  "dua": {
+    "title": "Duʿāʾ of the Prophets",
+    "blurb": "Sixty-three supplications from the Qur'an and authenticated Sunnah, each with the Arabic, a transliteration, a translation and the moment it was said.",
+    "category": "Faith",
+    "topics": ["islam", "quran", "reference"]
+  },
+  "qibla": {
+    "title": "Qibla Room Map",
+    "blurb": "Find the qibla without a working compass: use your location and a landmark in the room to line the direction up properly.",
+    "category": "Faith",
+    "topics": ["islam", "prayer", "tool"]
+  },
+  "Masjid": {
+    "title": "Masjid",
+    "blurb": "Prayer times and congregation times for your local mosque, set by location and shareable as a link.",
+    "category": "Faith",
+    "topics": ["islam", "prayer", "times"]
+  },
+  "flashes": {
+    "title": "The Flashes",
+    "blurb": "An English-language companion to Lem'alar by Said Nursî — full text, search, cross-references and notes, for readers coming to it without Ottoman Turkish.",
+    "category": "Faith",
+    "topics": ["islam", "reader", "study"]
+  },
+  "one": {
+    "title": "One God, Many Prophets",
+    "blurb": "A reading companion for the book: full text, a timeline, a glossary, an evidence matrix, and somewhere to keep your own notes.",
+    "category": "Faith",
+    "topics": ["reader", "study", "comparative-religion"]
+  },
+  "check": {
+    "title": "Mîzan Muhasebesi",
+    "blurb": "Forty questions for taking your own account before it's taken for you. Turkish, offline, and the answers never leave the device.",
+    "category": "Faith",
+    "topics": ["islam", "self-assessment", "turkish"]
+  },
+  "Readytodie": {
+    "title": "Ready to Die?",
+    "blurb": "A confronting set of questions about what you'd leave unfinished, and what the afterlife would make of it.",
+    "category": "Faith",
+    "topics": ["reflection", "afterlife", "questions"]
+  },
+
+  "testforge": {
+    "title": "TestForge",
+    "blurb": "A control plane for hardware and firmware test labs: see which devices are healthy, queue jobs across them, and triage crashes without SSHing into anything.",
+    "category": "Tools & Platforms",
+    "topics": ["hardware", "testing", "devops"],
+    "featured": true
+  },
+  "AdilStore": {
+    "title": "AdilStore",
+    "blurb": "A small app store for software that doesn't harvest you — handpicked tools, mindful games and spiritual companions, with the privacy terms stated up front.",
+    "category": "Tools & Platforms",
+    "topics": ["app-store", "privacy", "directory"]
+  },
+  "adilstore-webapps": {
+    "title": "AdilStore Web Apps",
+    "blurb": "The hosted web builds behind AdilStore — the versions that run in a browser tab with nothing to install.",
+    "category": "Tools & Platforms",
+    "topics": ["webapps", "hosting"]
+  },
+  "Benefisocial": {
+    "title": "SoBeneficial",
+    "blurb": "A social network designed around communities that teach and support rather than feeds that enrage. This is the case for it, in English and Turkish.",
+    "category": "Tools & Platforms",
+    "topics": ["social", "community", "privacy"]
+  },
+  "soundscope": {
+    "title": "SoundScope",
+    "blurb": "Turn your phone into a sound-level meter and find out whether the room you're in is quietly damaging your hearing. Installs as an app, works offline.",
+    "category": "Tools & Platforms",
+    "topics": ["measurement", "hearing", "pwa"]
+  },
+  "coin": {
+    "title": "TimeCoin",
+    "blurb": "An experiment in using hours as the unit of exchange instead of currency.",
+    "category": "Tools & Platforms",
+    "topics": ["experiment", "economics"]
+  }
+}
