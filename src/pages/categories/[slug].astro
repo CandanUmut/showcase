@@ -1,0 +1,76 @@
+---
+import Base from '../../layouts/Base.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+import { url, absolute, slugify } from '../../lib/paths.js';
+import data from '../../data/projects.json';
+import config from '../../../showcase.config.json';
+
+export function getStaticPaths() {
+  const names = [...new Set(data.projects.map((p) => p.category))];
+  return names.map((name) => ({
+    params: { slug: slugify(name) },
+    props: { name, projects: data.projects.filter((p) => p.category === name) }
+  }));
+}
+
+const { name, projects } = Astro.props;
+const blurb =
+  config.categoryBlurbs?.[name] || `Projects filed under ${name}.`;
+
+const title = `${name} — ${projects.length} live project${projects.length === 1 ? '' : 's'} by ${config.displayName}`;
+const description = `${blurb} ${projects.length} live, openable ${projects.length === 1 ? 'project' : 'projects'}: ${projects
+  .slice(0, 4)
+  .map((p) => p.title)
+  .join(', ')}${projects.length > 4 ? ' and more' : ''}.`;
+
+const shot = projects.find((p) => p.image && !p.image.startsWith('http'));
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: `${name} — ${config.title}`,
+  description,
+  url: absolute(`categories/${slugify(name)}`, Astro.site),
+  isPartOf: { '@type': 'WebSite', name: config.title, url: absolute('', Astro.site) },
+  mainEntity: {
+    '@type': 'ItemList',
+    numberOfItems: projects.length,
+    itemListElement: projects.map((p, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      url: absolute(`projects/${p.slug}`, Astro.site),
+      name: p.title
+    }))
+  }
+};
+---
+
+<Base
+  title={title}
+  description={description}
+  path={`categories/${slugify(name)}`}
+  ogImage={shot ? url(shot.image) : null}
+  jsonLd={jsonLd}
+>
+  <nav class="crumbs shell" aria-label="Breadcrumb">
+    <ol>
+      <li><a href={url()}>Projects</a></li>
+      <li aria-current="page">{name}</li>
+    </ol>
+  </nav>
+
+  <section class="hero shell">
+    <h1>{name}</h1>
+    <p class="hero__lede">{blurb}</p>
+  </section>
+
+  <section class="section shell" aria-label={`${name} projects`}>
+    <div class="section__head">
+      <h2>{projects.length} {projects.length === 1 ? 'project' : 'projects'}</h2>
+      <p class="section__count"><a href={url()}>← Back to everything</a></p>
+    </div>
+    <ul class="grid" role="list">
+      {projects.map((p, i) => <ProjectCard project={p} eager={i < 3} />)}
+    </ul>
+  </section>
+</Base>

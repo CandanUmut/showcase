@@ -3,7 +3,3 @@ dist/
 .astro/
 .DS_Store
 *.log
-
-# Screenshot cache manifest is regenerated per environment; the repo dump is a
-# local dev fallback for sandboxes that cannot reach the users/*/repos endpoint.
-.cache/shots.json

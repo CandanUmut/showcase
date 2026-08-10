@@ -1,0 +1,707 @@
+/*
+  A bank of monitors on a pale wall.
+
+  Most of the screenshots in this showcase are dark, low-chroma UI. Rather than
+  mat them on white — which puts a hard edge around every card — each card gets
+  a dark "screen" surface that sits flush with the dark shots and acts as a
+  bezel for the handful of light ones. Amber is the only saturated colour and it
+  is spent in exactly one place: the rim-light that wakes a screen on hover and
+  on keyboard focus.
+*/
+
+:root {
+  --paper: #edf0f3;
+  --chalk: #ffffff;
+  --screen: #141b24;
+  --graphite: #16202b;
+  --slate: #54626f;
+  --lamp-deep: #9c5307; /* amber that clears AA on paper */
+  --lamp: #e9a23b; /* amber for use on the dark screen surface */
+  --verdigris: #2e6b5e;
+  --verdigris-lit: #7fb3a6;
+
+  --rule: rgba(22, 32, 43, 0.12);
+  --rule-strong: rgba(22, 32, 43, 0.22);
+  --bezel: rgba(22, 32, 43, 0.18);
+
+  --display: 'Archivo', 'Archivo Expanded', system-ui, sans-serif;
+  --body: 'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --gutter: 1.5rem;
+  --measure: 68ch;
+  --radius: 10px;
+  --shell: 1200px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--graphite);
+  font-family: var(--body);
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: var(--lamp-deep);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+:focus-visible {
+  outline: 3px solid var(--lamp-deep);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--display);
+  font-weight: 700;
+  font-stretch: 118%;
+  line-height: 1.08;
+  letter-spacing: -0.015em;
+  margin: 0;
+  text-wrap: balance;
+}
+
+p {
+  margin: 0;
+  text-wrap: pretty;
+}
+
+/* ---------------------------------------------------------------- shell */
+
+.shell {
+  max-width: var(--shell);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.skip {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--graphite);
+  color: var(--paper);
+  padding: 0.75rem 1rem;
+  z-index: 50;
+}
+
+.skip:focus {
+  left: 0.5rem;
+  top: 0.5rem;
+}
+
+/* ------------------------------------------------------------------ nav */
+
+.masthead {
+  border-bottom: 1px solid var(--rule);
+  background: var(--paper);
+}
+
+.masthead__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 68px;
+  flex-wrap: wrap;
+}
+
+.wordmark {
+  font-family: var(--display);
+  font-weight: 700;
+  font-stretch: 125%;
+  font-size: 0.9rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--graphite);
+  text-decoration: none;
+}
+
+.wordmark:hover {
+  color: var(--lamp-deep);
+}
+
+.masthead nav ul {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.9rem;
+}
+
+.masthead nav a {
+  color: var(--slate);
+  text-decoration: none;
+}
+
+.masthead nav a:hover,
+.masthead nav a[aria-current='page'] {
+  color: var(--graphite);
+  text-decoration: underline;
+  text-underline-offset: 0.3em;
+}
+
+/* ----------------------------------------------------------------- hero */
+
+.hero {
+  padding-block: clamp(3rem, 9vw, 6rem) clamp(2rem, 5vw, 3.5rem);
+}
+
+.hero h1 {
+  font-size: clamp(2.15rem, 6.4vw, 4.25rem);
+  max-width: 17ch;
+}
+
+.hero__lede {
+  margin-top: 1.5rem;
+  max-width: 46ch;
+  font-size: clamp(1.05rem, 2.2vw, 1.2rem);
+  color: var(--slate);
+}
+
+.hero__note {
+  margin-top: 1.25rem;
+  max-width: 52ch;
+  font-size: 0.95rem;
+  color: var(--slate);
+}
+
+/* --------------------------------------------------------------- filter */
+
+.filter {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: color-mix(in srgb, var(--paper) 92%, transparent);
+  backdrop-filter: blur(8px);
+  border-block: 1px solid var(--rule);
+  padding-block: 0.85rem;
+}
+
+.filter__inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1rem;
+  align-items: center;
+}
+
+.filter__search {
+  flex: 1 1 15rem;
+  min-width: 0;
+}
+
+.filter__search input {
+  width: 100%;
+  font: inherit;
+  font-size: 0.95rem;
+  color: var(--graphite);
+  background: var(--chalk);
+  border: 1px solid var(--rule-strong);
+  border-radius: 999px;
+  padding: 0.55rem 1rem;
+}
+
+.filter__search input::placeholder {
+  color: var(--slate);
+}
+
+.filter__search input:focus-visible {
+  outline: 3px solid var(--lamp-deep);
+  outline-offset: 2px;
+  border-color: transparent;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.chip {
+  font: inherit;
+  font-size: 0.85rem;
+  line-height: 1.2;
+  color: var(--slate);
+  background: transparent;
+  border: 1px solid var(--rule-strong);
+  border-radius: 999px;
+  padding: 0.42rem 0.8rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.chip:hover {
+  color: var(--graphite);
+  border-color: var(--slate);
+}
+
+.chip[aria-pressed='true'] {
+  background: var(--graphite);
+  border-color: var(--graphite);
+  color: var(--paper);
+}
+
+.chip__count {
+  opacity: 0.65;
+  font-variant-numeric: tabular-nums;
+  margin-left: 0.35em;
+}
+
+/* ----------------------------------------------------------------- grid */
+
+.grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 2.5rem 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(min(320px, 100%), 1fr));
+}
+
+.section {
+  padding-block: clamp(2.5rem, 6vw, 4rem);
+}
+
+.section__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.section__head h2 {
+  font-size: clamp(1.35rem, 3vw, 1.9rem);
+}
+
+.section__count {
+  color: var(--slate);
+  font-size: 0.9rem;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ----------------------------------------------------------------- card */
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.card__screen {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  background: var(--screen);
+  border: 1px solid var(--bezel);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    border-color 180ms ease;
+}
+
+.card__screen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+/* The one bold move: the screen wakes. */
+.card:hover .card__screen,
+.card:focus-within .card__screen {
+  transform: translateY(-2px);
+  border-color: var(--lamp);
+  box-shadow:
+    0 0 0 1px var(--lamp),
+    0 6px 14px -6px rgba(22, 32, 43, 0.35),
+    0 0 34px -6px rgba(233, 162, 59, 0.55);
+}
+
+.card__title {
+  font-size: 1.12rem;
+  font-stretch: 112%;
+  letter-spacing: -0.01em;
+}
+
+.card__title a {
+  color: var(--graphite);
+  text-decoration: none;
+}
+
+.card__title a::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius);
+}
+
+.card:hover .card__title a,
+.card__title a:focus-visible {
+  color: var(--lamp-deep);
+}
+
+.card__blurb {
+  color: var(--slate);
+  font-size: 0.94rem;
+  margin-top: -0.35rem;
+}
+
+/* Two stacked rows rather than one wrapping row — a wrapped inline separator
+   orphans a "·" at the start of the second line. */
+.card__meta {
+  display: grid;
+  gap: 0.2rem;
+  margin-top: auto;
+  padding-top: 0.15rem;
+  font-size: 0.78rem;
+  color: var(--slate);
+}
+
+.card__meta-sub {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Sits above the stretched title link so it stays independently clickable. */
+.card__live {
+  position: absolute;
+  z-index: 2;
+  right: 0.6rem;
+  bottom: 0.6rem;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--screen);
+  background: var(--lamp);
+  border-radius: 999px;
+  padding: 0.3rem 0.7rem;
+  text-decoration: none;
+  opacity: 0;
+  transition: opacity 160ms ease;
+}
+
+.card:hover .card__live,
+.card__live:focus-visible {
+  opacity: 1;
+}
+
+/* Touch devices never hover, so the direct link has to be permanently visible. */
+@media (hover: none) {
+  .card__live {
+    opacity: 1;
+  }
+}
+
+.tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--verdigris);
+  text-decoration: none;
+}
+
+a.tag:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+}
+
+.dot::before {
+  content: '·';
+  margin-right: 0.5rem;
+}
+
+/* ---------------------------------------------------------- empty state */
+
+.empty {
+  padding: 3.5rem 0;
+  max-width: 42ch;
+}
+
+.empty h2 {
+  font-size: 1.35rem;
+}
+
+.empty p {
+  margin-top: 0.75rem;
+  color: var(--slate);
+}
+
+.empty button {
+  margin-top: 1.25rem;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* --------------------------------------------------------- project page */
+
+.crumbs {
+  padding-top: 1.75rem;
+  font-size: 0.85rem;
+  color: var(--slate);
+}
+
+.crumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.crumbs li + li::before {
+  content: '/';
+  margin-right: 0.5rem;
+  color: var(--rule-strong);
+}
+
+.crumbs a {
+  color: var(--slate);
+}
+
+.project {
+  padding-block: 2rem clamp(3rem, 7vw, 5rem);
+  display: grid;
+  gap: clamp(2rem, 4vw, 3rem);
+  grid-template-columns: minmax(0, 1fr);
+}
+
+@media (min-width: 62rem) {
+  .project {
+    grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+    align-items: start;
+  }
+}
+
+.project__shot {
+  aspect-ratio: 16 / 10;
+  background: var(--screen);
+  border: 1px solid var(--bezel);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.project__shot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.project__body h1 {
+  font-size: clamp(1.8rem, 4.5vw, 2.75rem);
+  margin-top: 0.6rem;
+}
+
+.project__blurb {
+  margin-top: 1.25rem;
+  font-size: 1.05rem;
+  color: var(--slate);
+  max-width: var(--measure);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.btn {
+  font: inherit;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border-radius: 999px;
+  padding: 0.7rem 1.4rem;
+  text-decoration: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn--primary {
+  background: var(--graphite);
+  color: var(--paper);
+}
+
+.btn--primary:hover {
+  background: var(--lamp-deep);
+}
+
+.btn--ghost {
+  border-color: var(--rule-strong);
+  color: var(--graphite);
+  background: var(--chalk);
+}
+
+.btn--ghost:hover {
+  border-color: var(--slate);
+}
+
+.facts {
+  margin-top: 2.5rem;
+  border-top: 1px solid var(--rule);
+  display: grid;
+  gap: 0;
+}
+
+.facts div {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid var(--rule);
+  font-size: 0.9rem;
+}
+
+.facts dt {
+  color: var(--slate);
+}
+
+.facts dd {
+  margin: 0;
+  text-align: right;
+}
+
+.topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  list-style: none;
+  margin: 1.5rem 0 0;
+  padding: 0;
+}
+
+.topics li {
+  font-size: 0.78rem;
+  color: var(--slate);
+  background: var(--chalk);
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  padding: 0.25rem 0.7rem;
+}
+
+/* --------------------------------------------------------------- footer */
+
+.footer {
+  border-top: 1px solid var(--rule);
+  padding-block: 2.5rem 3.5rem;
+  font-size: 0.88rem;
+  color: var(--slate);
+}
+
+.footer__inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+  justify-content: space-between;
+}
+
+.footer a {
+  color: var(--slate);
+}
+
+/* ------------------------------------------------------------ 360px fit */
+
+@media (max-width: 48rem) {
+  /* Four wrapped rows of chips would eat a third of a phone screen while
+     sticky. Keep them on one swipeable line instead. */
+  .filter__inner {
+    flex-wrap: nowrap;
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  /* flex-basis resolves against the main axis, so the search wrapper's 15rem
+     would become a 15rem-tall box once this bar stacks. */
+  .filter__search {
+    flex: 0 0 auto;
+  }
+
+  .chips {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    padding-bottom: 0.15rem;
+    margin-inline: calc(var(--gutter) * -1);
+    padding-inline: var(--gutter);
+    scroll-snap-type: x proximity;
+  }
+
+  .chips::-webkit-scrollbar {
+    display: none;
+  }
+
+  .chips > li {
+    scroll-snap-align: start;
+  }
+}
+
+@media (max-width: 26rem) {
+  :root {
+    --gutter: 1rem;
+  }
+
+  .grid {
+    gap: 2rem 1rem;
+  }
+}
+
+/* ------------------------------------------------------ reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  /* The rim-light is the affordance, so it stays — only the movement goes. */
+  .card:hover .card__screen,
+  .card:focus-within .card__screen {
+    transform: none;
+  }
+}

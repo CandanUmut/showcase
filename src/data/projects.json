@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-10T19:20:56.090Z",
+  "generatedAt": "2026-08-10T19:34:14.016Z",
   "username": "CandanUmut",
   "counts": {
     "repositories": 160,
@@ -64,7 +64,7 @@
       "pushedAt": "2026-06-16T04:07:29Z",
       "homepage": null,
       "featured": true,
-      "image": "https://candanumut.github.io/testforge/og-image.png",
+      "image": "/shots/testforge-og.png",
       "imageKind": "og",
       "letterMark": null,
       "icon": "https://candanumut.github.io/testforge/favicon.svg"
@@ -221,8 +221,8 @@
       "pushedAt": "2026-08-01T02:20:47Z",
       "homepage": null,
       "featured": false,
-      "image": "https://candanumut.github.io/dua/icon-512.png",
-      "imageKind": "og",
+      "image": "/shots/dua.png",
+      "imageKind": "shot",
       "letterMark": null,
       "icon": "https://candanumut.github.io/dua/icon.svg"
     },
@@ -273,7 +273,7 @@
       "pushedAt": "2026-06-17T20:25:05Z",
       "homepage": null,
       "featured": false,
-      "image": "https://candanumut.github.io/flashes/icons/icon-512.png",
+      "image": "/shots/flashes-og.png",
       "imageKind": "og",
       "letterMark": null,
       "icon": "https://candanumut.github.io/flashes/favicon.svg"
@@ -1027,7 +1027,7 @@
       "pushedAt": "2025-12-14T02:24:40Z",
       "homepage": null,
       "featured": false,
-      "image": "https://candanumut.github.io/Breath_aurora/icons/share-card.png",
+      "image": "/shots/Breath_aurora-og.png",
       "imageKind": "og",
       "letterMark": null,
       "icon": "https://candanumut.github.io/Breath_aurora/icons/favicon.png"

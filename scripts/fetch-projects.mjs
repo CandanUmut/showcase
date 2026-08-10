@@ -103,6 +103,13 @@ async function listRepos(username) {
         log.warn(
           `users/${username}/repos unavailable (${res ? res.status : 'network error'}) — trying local dump`
         );
+        // In CI, fall over loudly rather than shipping a snapshot that may be
+        // months stale — the whole point of the daily run is fresh discovery.
+        if (process.env.CI) {
+          throw new Error(
+            `Could not list repositories for ${username}. Refusing the local dump fallback in CI.`
+          );
+        }
         const dump = await readJson(path.join(CACHE_DIR, 'repos-dump.json'));
         if (dump) {
           log.info(`loaded ${dump.length} repos from .cache/repos-dump.json`);
@@ -344,14 +351,38 @@ function shade(hex, amt) {
   return '#' + c.map((v) => v.toString(16).padStart(2, '0')).join('');
 }
 
-async function ogImageUsable(url) {
-  if (!url) return false;
-  if (!/^https?:\/\//i.test(url)) return false;
-  const res = await safeFetch(url, { method: 'HEAD', timeout: 12000 });
-  if (!res) return false;
-  if (!res.ok) return false;
-  const type = res.headers.get('content-type') || '';
-  return !type || type.startsWith('image/');
+const IMG_EXT = {
+  'image/png': '.png',
+  'image/jpeg': '.jpg',
+  'image/webp': '.webp',
+  'image/avif': '.avif',
+  'image/gif': '.gif'
+};
+
+/**
+ * Copy a usable og:image into public/shots and return its local path.
+ *
+ * Hotlinking the origin would leave the showcase dependent on 56 other sites
+ * staying up and keeping that exact asset path — one rename and a card renders
+ * as a broken image. Returns null if the image is missing, not an image, or
+ * implausibly small (favicons masquerading as og:image).
+ */
+async function localiseOgImage(repo, url) {
+  if (!url || !/^https?:\/\//i.test(url)) return null;
+  const res = await safeFetch(url, { timeout: 15000 });
+  if (!res || !res.ok) return null;
+
+  const type = (res.headers.get('content-type') || '').split(';')[0].trim().toLowerCase();
+  if (type && !type.startsWith('image/')) return null;
+  if (type === 'image/svg+xml') return null;
+
+  const buf = Buffer.from(await res.arrayBuffer());
+  if (buf.length < 5_000) return null;
+
+  const ext = IMG_EXT[type] || path.extname(new URL(url).pathname).slice(0, 5) || '.png';
+  const file = `${repo}-og${ext}`;
+  await writeFile(path.join(SHOTS_DIR, file), buf);
+  return `/shots/${file}`;
 }
 
 /* ------------------------------------------------------------ screenshots */
@@ -450,6 +481,87 @@ async function captureScreenshots(targets) {
   return manifest;
 }
 
+/**
+ * Render the default social card: the same headline the hub leads with, over a
+ * strip of real screenshots. Regenerated each build so the count stays true.
+ */
+async function makeSocialCard(projects, config) {
+  const strip = projects
+    .filter((p) => p.image && !p.image.startsWith('http'))
+    .slice(0, 5)
+    .map((p) => path.join(ROOT, 'public', p.image.replace(/^\//, '')))
+    .filter((f) => existsSync(f));
+  if (strip.length === 0) return false;
+
+  let chromium;
+  try {
+    ({ chromium } = await import('playwright'));
+  } catch {
+    return false;
+  }
+
+  const fontDir = path.join(ROOT, 'public', 'fonts');
+  const asDataUri = async (file, mime) =>
+    `data:${mime};base64,${(await readFile(file)).toString('base64')}`;
+
+  const archivo = await asDataUri(
+    path.join(fontDir, 'archivo-400-800-latin.woff2'),
+    'font/woff2'
+  ).catch(() => null);
+  const plex = await asDataUri(
+    path.join(fontDir, 'ibm-plex-sans-400-latin.woff2'),
+    'font/woff2'
+  ).catch(() => null);
+  const tiles = await Promise.all(strip.map((f) => asDataUri(f, 'image/png')));
+
+  const html = `<!doctype html><meta charset="utf-8"><style>
+    ${archivo ? `@font-face{font-family:A;src:url(${archivo}) format('woff2');font-weight:400 800;font-stretch:100% 125%}` : ''}
+    ${plex ? `@font-face{font-family:P;src:url(${plex}) format('woff2')}` : ''}
+    *{box-sizing:border-box;margin:0}
+    body{width:1200px;height:630px;background:#edf0f3;color:#16202b;
+      font-family:P,sans-serif;display:flex;flex-direction:column;
+      justify-content:space-between;padding:64px 64px 0}
+    h1{font-family:A,sans-serif;font-weight:700;font-stretch:118%;font-size:76px;
+      line-height:1.02;letter-spacing:-.02em;max-width:15ch}
+    p{color:#54626f;font-size:25px;margin-top:22px;max-width:40ch}
+    .strip{display:flex;gap:18px;margin-top:40px}
+    .strip div{flex:1;aspect-ratio:16/10;background:#141b24;border-radius:10px 10px 0 0;
+      border:1px solid rgba(22,32,43,.18);border-bottom:0;overflow:hidden}
+    .strip img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
+  </style>
+  <div><h1>${projects.length} things you can open right now.</h1>
+  <p>${escapeHtml(config.tagline || '')}</p></div>
+  <div class="strip">${tiles.map((t) => `<div><img src="${t}"></div>`).join('')}</div>`;
+
+  const proxyUrl = process.env.HTTPS_PROXY || process.env.https_proxy || '';
+  const browser = await chromium
+    .launch({
+      args: ['--no-sandbox', '--disable-dev-shm-usage'],
+      ...((await findSystemChromium()) ? { executablePath: await findSystemChromium() } : {})
+    })
+    .catch(() => null);
+  if (!browser) return false;
+
+  try {
+    const page = await browser.newPage({ viewport: { width: 1200, height: 630 } });
+    await page.setContent(html, { waitUntil: 'load' });
+    await page.waitForTimeout(600);
+    await page.screenshot({ path: path.join(ROOT, 'public', 'og-default.png') });
+    return true;
+  } catch {
+    return false;
+  } finally {
+    await browser.close().catch(() => {});
+  }
+}
+
+function escapeHtml(s) {
+  return String(s).replace(
+    /[&<>"']/g,
+    (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]
+  );
+}
+
 async function findSystemChromium() {
   const roots = [process.env.PLAYWRIGHT_BROWSERS_PATH, '/opt/pw-browsers'].filter(Boolean);
   const { readdir } = await import('node:fs/promises');
@@ -524,7 +636,8 @@ async function main() {
   const covers = await pool(enriched, 6, async (e) => {
     const o = overrides[e.repo.name] || {};
     if (o.image) return { kind: 'override', src: o.image };
-    if (await ogImageUsable(e.meta.ogImage)) return { kind: 'og', src: e.meta.ogImage };
+    const og = await localiseOgImage(e.repo.name, e.meta.ogImage);
+    if (og) return { kind: 'og', src: og };
     needShot.push({ repo: e.repo.name, url: e.url, sha: e.repo.pushed_at });
     return { kind: 'shot', src: null };
   });
@@ -616,6 +729,11 @@ async function main() {
       2
     )
   );
+
+  if (!SKIP_SHOTS) {
+    const made = await makeSocialCard(projects, config);
+    log.info(made ? 'social card written to public/og-default.png' : 'social card skipped');
+  }
 
   log.step('Summary');
   log.info(`${projects.length} projects written to src/data/projects.json`);

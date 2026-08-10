@@ -1,0 +1,136 @@
+<!--
+  Showcase backlink — paste this into each individual project site.
+
+  Drop it just before </body>, or anywhere in the footer. It is self-contained:
+  no scripts, no external requests, no build step, no framework. The class names
+  are prefixed so they will not collide with the host page's styles.
+
+  Why it matters: see the "Cross-linking" section of the showcase README. In
+  short, a hub that links out to 56 sites while none of them link back is a
+  dead end to a crawler. These backlinks are what turn the hub into a real node
+  in the graph rather than a decorative index page.
+
+  If the hub ever moves, update the two href values below.
+-->
+
+<aside class="showcase-backlink" aria-label="More projects by this author">
+  <a
+    class="showcase-backlink__link"
+    href="https://candanumut.github.io/showcase/"
+    rel="noopener"
+  >
+    <span class="showcase-backlink__mark" aria-hidden="true"></span>
+    <span class="showcase-backlink__text">
+      <strong>More things you can open right now</strong>
+      <span>Focus tools, browser games, simulations and research sites by Umut Candan</span>
+    </span>
+    <span class="showcase-backlink__go" aria-hidden="true">&rarr;</span>
+  </a>
+</aside>
+
+<style>
+  .showcase-backlink {
+    --sb-ink: #16202b;
+    --sb-paper: #edf0f3;
+    --sb-slate: #54626f;
+    --sb-lamp: #9c5307;
+    --sb-rule: rgba(22, 32, 43, 0.14);
+
+    font-family:
+      system-ui,
+      -apple-system,
+      'Segoe UI',
+      sans-serif;
+    margin: 3rem auto 1.5rem;
+    max-width: 44rem;
+    padding-inline: 1rem;
+  }
+
+  .showcase-backlink__link {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    padding: 0.9rem 1.1rem;
+    border: 1px solid var(--sb-rule);
+    border-radius: 12px;
+    background: var(--sb-paper);
+    color: var(--sb-ink);
+    text-decoration: none;
+    line-height: 1.4;
+    transition:
+      border-color 160ms ease,
+      box-shadow 160ms ease;
+  }
+
+  .showcase-backlink__link:hover,
+  .showcase-backlink__link:focus-visible {
+    border-color: #e9a23b;
+    box-shadow: 0 0 0 1px #e9a23b;
+  }
+
+  .showcase-backlink__link:focus-visible {
+    outline: 3px solid var(--sb-lamp);
+    outline-offset: 3px;
+  }
+
+  .showcase-backlink__mark {
+    flex: 0 0 auto;
+    width: 30px;
+    height: 24px;
+    border-radius: 5px;
+    background: #141b24;
+    position: relative;
+  }
+
+  .showcase-backlink__mark::after {
+    content: '';
+    position: absolute;
+    inset: 5px 6px 7px;
+    border-radius: 2px;
+    background: #e9a23b;
+  }
+
+  .showcase-backlink__text {
+    display: grid;
+    gap: 0.15rem;
+    min-width: 0;
+  }
+
+  .showcase-backlink__text strong {
+    font-size: 0.95rem;
+    font-weight: 600;
+  }
+
+  .showcase-backlink__text span {
+    font-size: 0.82rem;
+    color: var(--sb-slate);
+  }
+
+  .showcase-backlink__go {
+    margin-left: auto;
+    color: var(--sb-lamp);
+    font-size: 1.1rem;
+  }
+
+  /* Most of these project sites are dark, so invert rather than punch a bright
+     hole in the page. */
+  @media (prefers-color-scheme: dark) {
+    .showcase-backlink {
+      --sb-ink: #e8e3da;
+      --sb-paper: #141b24;
+      --sb-slate: #9aa7b4;
+      --sb-lamp: #e9a23b;
+      --sb-rule: rgba(232, 227, 218, 0.18);
+    }
+
+    .showcase-backlink__mark {
+      background: #0b1016;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .showcase-backlink__link {
+      transition: none;
+    }
+  }
+</style>

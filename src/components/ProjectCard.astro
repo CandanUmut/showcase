@@ -1,0 +1,67 @@
+---
+import { url, relativeAge } from '../lib/paths.js';
+
+const { project, eager = false } = Astro.props;
+const p = project;
+
+// The blurb is the search haystack too — cards filter over pre-rendered text.
+const haystack = [p.title, p.repo, p.blurb, p.category, p.language, ...(p.topics || [])]
+  .filter(Boolean)
+  .join(' ')
+  .toLowerCase();
+
+const alt = p.image
+  ? `Screenshot of ${p.title}: ${p.blurb ? p.blurb.split('. ')[0] : p.category.toLowerCase()}`
+  : `${p.title} — no screenshot available, showing a generated cover`;
+---
+
+<li class="card" data-category={p.category} data-search={haystack}>
+  <div class="card__screen">
+    {
+      p.image ? (
+        <img
+          src={p.image.startsWith('http') ? p.image : url(p.image)}
+          alt={alt}
+          width="1280"
+          height="800"
+          loading={eager ? 'eager' : 'lazy'}
+          fetchpriority={eager ? 'high' : undefined}
+          decoding="async"
+        />
+      ) : (
+        <Fragment set:html={p.letterMark} />
+      )
+    }
+    <a class="card__live" href={p.url} target="_blank" rel="noopener">
+      Open live<span aria-hidden="true"> ↗</span>
+      <span class="sr-only"> — {p.title}, opens in a new tab</span>
+    </a>
+  </div>
+
+  <h3 class="card__title">
+    <a href={url(`projects/${p.slug}`)}>{p.title}</a>
+  </h3>
+
+  {p.blurb && <p class="card__blurb">{p.blurb}</p>}
+
+  <p class="card__meta">
+    <span class="tag">{p.category}</span>
+    <span class="card__meta-sub">
+      {p.language && <>{p.language}<span aria-hidden="true"> · </span></>}
+      {relativeAge(p.pushedAt)}
+    </span>
+  </p>
+</li>
+
+<style>
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+</style>
