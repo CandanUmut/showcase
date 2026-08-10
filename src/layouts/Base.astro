@@ -1,0 +1,115 @@
+---
+import '../styles/global.css';
+import { url, absolute } from '../lib/paths.js';
+import config from '../../showcase.config.json';
+
+const {
+  title,
+  description,
+  path,
+  ogImage = null,
+  ogType = 'website',
+  jsonLd = null,
+  navCurrent = null
+} = Astro.props;
+
+const canonical = absolute(path, Astro.site);
+const image = ogImage ? new URL(ogImage, Astro.site).href : absolute('og-default.png', Astro.site);
+const year = new Date().getFullYear();
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+
+    <meta property="og:type" content={ogType} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={image} />
+    <meta property="og:site_name" content={config.title} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
+
+    <meta name="theme-color" content="#edf0f3" />
+    <link rel="icon" href={url('favicon.svg')} type="image/svg+xml" />
+
+    <link rel="stylesheet" href={url('fonts/fonts.css')} />
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      crossorigin
+      href={url('fonts/archivo-400-800-latin.woff2')}
+    />
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      crossorigin
+      href={url('fonts/ibm-plex-sans-400-latin.woff2')}
+    />
+
+    {
+      jsonLd && (
+        <script
+          type="application/ld+json"
+          set:html={JSON.stringify(jsonLd)}
+        />
+      )
+    }
+  </head>
+
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+
+    <header class="masthead">
+      <div class="shell masthead__inner">
+        <a class="wordmark" href={url()}>{config.displayName}</a>
+        <nav aria-label="Primary">
+          <ul>
+            <li>
+              <a href={url()} aria-current={navCurrent === 'home' ? 'page' : undefined}>
+                Projects
+              </a>
+            </li>
+            <li>
+              <a
+                href={`https://github.com/${config.username}`}
+                rel="me noopener"
+                target="_blank">GitHub</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <slot />
+    </main>
+
+    <footer class="footer">
+      <div class="shell footer__inner">
+        <p>
+          Every project here is a live site, checked at build time. Built with Astro,
+          deployed on GitHub Pages.
+        </p>
+        <p>
+          <a href={`https://github.com/${config.username}`} rel="me noopener" target="_blank"
+            >github.com/{config.username}</a
+          >
+          <span aria-hidden="true"> · </span>{year}
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

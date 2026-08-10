@@ -1,0 +1,40 @@
+---
+import Base from '../layouts/Base.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import { url } from '../lib/paths.js';
+import data from '../data/projects.json';
+
+const picks = data.projects.slice(0, 3);
+---
+
+<Base
+  title="That page isn't here — but 56 live projects are"
+  description="This URL doesn't exist on the showcase. Head back to the index of live projects, or start with one of these three."
+  path="404"
+>
+  <section class="hero shell">
+    <h1>Nothing at this address.</h1>
+    <p class="hero__lede">
+      The page you were after isn't here. Everything that is here is one click
+      away.
+    </p>
+    <p class="hero__note">
+      <a class="btn btn--primary" href={url()}>Go to all projects</a>
+    </p>
+  </section>
+
+  <section class="section shell" aria-labelledby="start-here">
+    <div class="section__head">
+      <h2 id="start-here">Start with one of these</h2>
+    </div>
+    <ul class="grid" role="list">
+      {picks.map((p) => <ProjectCard project={p} eager />)}
+    </ul>
+  </section>
+</Base>
+
+<style>
+  .hero__note .btn {
+    margin-top: 0.5rem;
+  }
+</style>

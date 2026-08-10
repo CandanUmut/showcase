@@ -1,0 +1,205 @@
+---
+import Base from '../layouts/Base.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import { url, absolute, slugify } from '../lib/paths.js';
+import data from '../data/projects.json';
+import config from '../../showcase.config.json';
+
+const projects = data.projects;
+const total = projects.length;
+
+const categories = Object.entries(
+  projects.reduce((m, p) => ((m[p.category] = (m[p.category] || 0) + 1), m), {})
+).sort((a, b) => b[1] - a[1]);
+
+const title = `${total} live web projects by ${config.displayName} — screenshots and links`;
+const description = `A working index of ${total} things ${config.displayName} has built and shipped: focus tools, browser games, simulations, research sites and reading companions. Every link is checked and live.`;
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: config.title,
+  description,
+  url: absolute('', Astro.site),
+  mainEntity: {
+    '@type': 'ItemList',
+    numberOfItems: total,
+    itemListElement: projects.map((p, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      url: absolute(`projects/${p.slug}`, Astro.site),
+      name: p.title,
+      description: p.blurb || undefined
+    }))
+  }
+};
+
+---
+
+<Base
+  title={title}
+  description={description}
+  path=""
+  navCurrent="home"
+  jsonLd={jsonLd}
+>
+  <section class="hero shell">
+    <h1>{total} things you can open right now.</h1>
+    <p class="hero__lede">{config.tagline}</p>
+    <p class="hero__note">
+      Focus timers, browser games, simulations of the actual planet, research
+      sites, and reading companions. Nothing to install, nothing to sign up for.
+      Pick one and it opens.
+    </p>
+  </section>
+
+  <div class="filter">
+    <div class="shell filter__inner">
+      <div class="filter__search">
+        <label class="sr-only" for="q">Search projects</label>
+        <input
+          type="search"
+          id="q"
+          placeholder="Search — try “offline”, “quiz”, “Turkish”"
+          autocomplete="off"
+        />
+      </div>
+      <ul class="chips" role="list">
+        <li>
+          <button class="chip" type="button" data-filter="all" aria-pressed="true">
+            Everything<span class="chip__count">{total}</span>
+          </button>
+        </li>
+        {
+          categories.map(([name, count]) => (
+            <li>
+              <button class="chip" type="button" data-filter={name} aria-pressed="false">
+                {name}
+                <span class="chip__count">{count}</span>
+              </button>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+
+  <section class="section shell" aria-labelledby="all-projects">
+    <div class="section__head">
+      <h2 id="all-projects">Everything, newest first</h2>
+      <p class="section__count" role="status" aria-live="polite" id="result-count">
+        Showing all {total}
+      </p>
+    </div>
+
+    <ul class="grid" id="grid" role="list">
+      {projects.map((p, i) => <ProjectCard project={p} eager={i < 3} />)}
+    </ul>
+
+    <div class="empty" id="empty" hidden>
+      <h2>Nothing matches that yet.</h2>
+      <p>
+        Try a shorter word, or browse a category instead — most of these are
+        small enough that the title doesn't say much.
+      </p>
+      <button class="btn btn--ghost" type="button" id="reset">Show everything</button>
+    </div>
+  </section>
+
+  <section class="section shell" aria-labelledby="by-category">
+    <div class="section__head">
+      <h2 id="by-category">By category</h2>
+    </div>
+    <ul class="chips" role="list">
+      {
+        categories.map(([name, count]) => (
+          <li>
+            <a class="chip" href={url(`categories/${slugify(name)}`)}>
+              {name}
+              <span class="chip__count">{count}</span>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+</Base>
+
+<style>
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  a.chip {
+    text-decoration: none;
+    display: inline-block;
+  }
+</style>
+
+<script>
+  // Filtering runs over the DOM Astro already rendered — no data is fetched and
+  // no framework is hydrated. Every card is in the HTML for crawlers regardless.
+  const grid = document.getElementById('grid');
+  const cards = Array.from(grid.querySelectorAll('.card'));
+  const search = document.getElementById('q');
+  const chips = Array.from(document.querySelectorAll('.chip[data-filter]'));
+  const count = document.getElementById('result-count');
+  const empty = document.getElementById('empty');
+  const reset = document.getElementById('reset');
+  const total = cards.length;
+
+  let category = 'all';
+  let query = '';
+
+  function apply() {
+    const q = query.trim().toLowerCase();
+    let shown = 0;
+
+    for (const card of cards) {
+      const matchesCategory = category === 'all' || card.dataset.category === category;
+      const matchesQuery = !q || card.dataset.search.includes(q);
+      const visible = matchesCategory && matchesQuery;
+      card.hidden = !visible;
+      if (visible) shown++;
+    }
+
+    empty.hidden = shown > 0;
+    grid.hidden = shown === 0;
+
+    if (shown === total) count.textContent = `Showing all ${total}`;
+    else if (shown === 0) count.textContent = 'No matches';
+    else if (shown === 1) count.textContent = '1 project';
+    else count.textContent = `${shown} projects`;
+  }
+
+  let debounce;
+  search.addEventListener('input', (e) => {
+    query = e.target.value;
+    clearTimeout(debounce);
+    debounce = setTimeout(apply, 120);
+  });
+
+  for (const chip of chips) {
+    chip.addEventListener('click', () => {
+      category = chip.dataset.filter;
+      for (const c of chips) c.setAttribute('aria-pressed', String(c === chip));
+      apply();
+    });
+  }
+
+  reset.addEventListener('click', () => {
+    category = 'all';
+    query = '';
+    search.value = '';
+    for (const c of chips) c.setAttribute('aria-pressed', String(c.dataset.filter === 'all'));
+    apply();
+    search.focus();
+  });
+</script>

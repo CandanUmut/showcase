@@ -1,0 +1,83 @@
+{
+  "username": "CandanUmut",
+  "displayName": "Umut Candan",
+  "site": "https://candanumut.github.io/showcase",
+  "title": "Umut Candan — Shipped Work",
+  "tagline": "Small web apps that do one thing, live in the browser, and need no account.",
+
+  "_categories": "Topic -> display category. This is the primary mechanism: add these topics to a repo on GitHub and it files itself. Repos matching nothing land in 'Other' and are listed loudly in the build output. Order matters — the first category with a matching topic wins.",
+  "categories": {
+    "Mind & Focus": [
+      "focus",
+      "productivity",
+      "habits",
+      "meditation",
+      "breathing",
+      "recovery",
+      "wellbeing",
+      "personal-development",
+      "self-assessment",
+      "cognition",
+      "mental-health",
+      "reading"
+    ],
+    "Games": ["game", "gamedev", "arcade", "puzzle", "roguelite", "party", "idle", "tournament"],
+    "Worlds & Simulations": [
+      "simulation",
+      "procedural",
+      "physics",
+      "sandbox",
+      "evolution",
+      "visualization",
+      "space",
+      "strategy"
+    ],
+    "Learning": [
+      "learning",
+      "education",
+      "quiz",
+      "interview-prep",
+      "classroom",
+      "literacy",
+      "developer-tools",
+      "cli"
+    ],
+    "Essays & Investigations": [
+      "research",
+      "essay",
+      "long-read",
+      "philosophy",
+      "ethics",
+      "policy",
+      "documentation",
+      "accountability",
+      "data",
+      "climate"
+    ],
+    "Faith": ["islam", "faith", "prayer", "quran", "spiritual", "reflection", "afterlife"],
+    "Tools & Platforms": [
+      "tool",
+      "measurement",
+      "app-store",
+      "directory",
+      "devops",
+      "testing",
+      "hardware",
+      "social",
+      "community",
+      "webapps",
+      "pwa"
+    ]
+  },
+
+  "categoryBlurbs": {
+    "Mind & Focus": "Tools for attention, calm, and the habits that hold a day together.",
+    "Games": "Short, playable, nothing to install. Several work with friends over a room code.",
+    "Worlds & Simulations": "Systems you can poke at to see how the rules play out — from a single lattice cell to the whole planet.",
+    "Learning": "Things you use repeatedly to get measurably better at something.",
+    "Essays & Investigations": "Arguments laid out with the evidence attached, and the data left where you can check it.",
+    "Faith": "Practical companions for daily religious practice, and books worth reading slowly.",
+    "Tools & Platforms": "The larger builds — control planes, directories, and infrastructure for other people's software.",
+    "Other": "Live projects that haven't been given topics yet."
+  }
+}

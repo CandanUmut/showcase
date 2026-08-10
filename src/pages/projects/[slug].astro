@@ -1,0 +1,184 @@
+---
+import Base from '../../layouts/Base.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+import { url, absolute, slugify, formatDate, seoTitle } from '../../lib/paths.js';
+import data from '../../data/projects.json';
+import config from '../../../showcase.config.json';
+
+export function getStaticPaths() {
+  return data.projects.map((p) => ({
+    params: { slug: p.slug },
+    props: { project: p }
+  }));
+}
+
+const { project: p } = Astro.props;
+
+const related = data.projects
+  .filter((o) => o.category === p.category && o.slug !== p.slug)
+  .slice(0, 3);
+
+const shot = p.image ? (p.image.startsWith('http') ? p.image : url(p.image)) : null;
+
+// Titles come from the project's own words; padding them with boilerplate would
+// make 56 near-identical <title> tags.
+const title = seoTitle(p.title, p.blurb || p.description);
+const description =
+  p.blurb ||
+  p.description ||
+  `${p.title} — a live ${p.category.toLowerCase()} project by ${config.displayName}, running in the browser.`;
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: p.title,
+  description,
+  url: p.url,
+  applicationCategory: 'WebApplication',
+  operatingSystem: 'Any (web browser)',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  author: { '@type': 'Person', name: config.displayName, url: `https://github.com/${config.username}` },
+  codeRepository: p.source,
+  dateModified: p.pushedAt,
+  ...(p.language ? { programmingLanguage: p.language } : {}),
+  ...(shot ? { screenshot: new URL(shot, Astro.site).href } : {}),
+  ...(p.license ? { license: p.license } : {})
+};
+---
+
+<Base
+  title={title}
+  description={description}
+  path={`projects/${p.slug}`}
+  ogType="article"
+  ogImage={shot}
+  jsonLd={jsonLd}
+>
+  <nav class="crumbs shell" aria-label="Breadcrumb">
+    <ol>
+      <li><a href={url()}>Projects</a></li>
+      <li>
+        <a href={url(`categories/${slugify(p.category)}`)}>{p.category}</a>
+      </li>
+      <li aria-current="page">{p.title}</li>
+    </ol>
+  </nav>
+
+  <article class="project shell">
+    <div class="project__shot">
+      {
+        shot ? (
+          <img
+            src={shot}
+            alt={`Screenshot of ${p.title}: ${p.blurb ? p.blurb.split('. ')[0] : p.category.toLowerCase()}`}
+            width="1280"
+            height="800"
+            fetchpriority="high"
+            decoding="async"
+          />
+        ) : (
+          <Fragment set:html={p.letterMark} />
+        )
+      }
+    </div>
+
+    <div class="project__body">
+      <p class="tag">{p.category}</p>
+      <h1>{p.title}</h1>
+
+      <p class="project__blurb">{description}</p>
+
+      <div class="actions">
+        <a class="btn btn--primary" href={p.url} target="_blank" rel="noopener">
+          Visit site<span aria-hidden="true"> ↗</span>
+        </a>
+        <a class="btn btn--ghost" href={p.source} target="_blank" rel="noopener">
+          View source
+        </a>
+      </div>
+
+      <dl class="facts">
+        {
+          p.language && (
+            <div>
+              <dt>Built with</dt>
+              <dd>{p.language}</dd>
+            </div>
+          )
+        }
+        <div>
+          <dt>Last updated</dt>
+          <dd><time datetime={p.pushedAt}>{formatDate(p.pushedAt)}</time></dd>
+        </div>
+        {
+          p.stars > 0 && (
+            <div>
+              <dt>Stars</dt>
+              <dd>{p.stars}</dd>
+            </div>
+          )
+        }
+        {
+          p.license && (
+            <div>
+              <dt>Licence</dt>
+              <dd>{p.license}</dd>
+            </div>
+          )
+        }
+        <div>
+          <dt>Repository</dt>
+          <dd>{p.repo}</dd>
+        </div>
+      </dl>
+
+      {
+        p.topics?.length > 0 && (
+          <>
+            <h2 class="sr-only">Topics</h2>
+            <ul class="topics" role="list">
+              {p.topics.map((t) => (
+                <li>{t}</li>
+              ))}
+            </ul>
+          </>
+        )
+      }
+    </div>
+  </article>
+
+  {
+    related.length > 0 && (
+      <section class="section shell" aria-labelledby="related">
+        <div class="section__head">
+          <h2 id="related">More in {p.category}</h2>
+          <p class="section__count">
+            <a href={url(`categories/${slugify(p.category)}`)}>See all →</a>
+          </p>
+        </div>
+        <ul class="grid" role="list">
+          {related.map((o) => (
+            <ProjectCard project={o} />
+          ))}
+        </ul>
+      </section>
+    )
+  }
+</Base>
+
+<style>
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .project__body > .tag {
+    display: block;
+  }
+</style>
