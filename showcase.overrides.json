@@ -36,7 +36,8 @@
     "title": "GrowthPath",
     "blurb": "A growth tracker for people who ship. Set goals across career, craft, reach and character, then log the small things that actually move them.",
     "category": "Mind & Focus",
-    "topics": ["personal-development", "goals", "tracking"]
+    "topics": ["personal-development", "goals", "tracking"],
+    "featured": true
   },
   "Transformyourlife": {
     "title": "Transform Your Life",
@@ -98,7 +99,7 @@
     "blurb": "Tetris on a hexagonal hive that rotates under you. Gravity follows the glowing wall, so the board you were planning for keeps turning.",
     "category": "Games",
     "topics": ["game", "puzzle", "arcade"],
-    "featured": true
+    "featured": false
   },
   "zombie_game": {
     "title": "Zombie Tap Defense",
@@ -160,14 +161,14 @@
     "blurb": "Walk, drive, sail or fly through a stylised version of the actual planet — real buildings, roads, rivers and terrain pulled from OpenStreetMap.",
     "category": "Worlds & Simulations",
     "topics": ["simulation", "3d", "openstreetmap"],
-    "featured": true
+    "featured": false
   },
   "fractaluni": {
     "title": "Fractal Universe",
     "blurb": "Fly out to a galaxy, pick a star, drop into its system, then land and walk on a planet that generates its terrain, water and wildlife as you arrive.",
     "category": "Worlds & Simulations",
     "topics": ["simulation", "procedural", "3d"],
-    "featured": true
+    "featured": false
   },
   "pru_simulation_engine": {
     "title": "PRU Universe",
@@ -205,7 +206,7 @@
     "blurb": "Learn Python in small steps, then practise on interview-style problems. Your code actually runs in the browser, so there's nothing to install.",
     "category": "Learning",
     "topics": ["python", "learning", "interview-prep"],
-    "featured": true
+    "featured": false
   },
   "RisksofAI": {
     "title": "AIAware",
@@ -273,7 +274,8 @@
     "title": "Duʿāʾ of the Prophets",
     "blurb": "Sixty-three supplications from the Qur'an and authenticated Sunnah, each with the Arabic, a transliteration, a translation and the moment it was said.",
     "category": "Faith",
-    "topics": ["islam", "quran", "reference"]
+    "topics": ["islam", "quran", "reference"],
+    "featured": true
   },
   "qibla": {
     "title": "Qibla Room Map",
@@ -317,7 +319,7 @@
     "blurb": "A control plane for hardware and firmware test labs: see which devices are healthy, queue jobs across them, and triage crashes without SSHing into anything.",
     "category": "Tools & Platforms",
     "topics": ["hardware", "testing", "devops"],
-    "featured": true
+    "featured": false
   },
   "AdilStore": {
     "title": "AdilStore",
@@ -348,5 +350,40 @@
     "blurb": "An experiment in using hours as the unit of exchange instead of currency.",
     "category": "Tools & Platforms",
     "topics": ["experiment", "economics"]
+  },
+  "myttcoach": {
+    "title": "Third Ball — table tennis coach",
+    "blurb": "A training plan built for your level, setup and schedule, with every move taught step by step by a 3D player. Adapts as you log sessions. Works offline.",
+    "category": "Learning",
+    "topics": ["sports", "table-tennis", "training", "pwa", "offline"],
+    "featured": true
+  },
+  "hifz": {
+    "title": "Hifz",
+    "blurb": "Memorise the Qur’an ayah by ayah, with reviews that bring each verse back just before you would forget it. English and Turkish, no account.",
+    "category": "Faith",
+    "topics": ["islam", "quran", "memorization", "spaced-repetition"],
+    "featured": true
+  },
+  "Freelay": {
+    "title": "Freelay",
+    "blurb": "A private tracker for quitting a habit: log urges, check in daily, and learn your own patterns. Nothing leaves your phone.",
+    "category": "Mind & Focus",
+    "topics": ["recovery", "habits", "privacy", "offline"],
+    "featured": true
+  },
+  "beats": {
+    "title": "Steady",
+    "blurb": "Calming music and paced breathing for anxious moments, sleep, focus or riding out an urge. Every claim labelled with its evidence. No account.",
+    "category": "Mind & Focus",
+    "topics": ["wellbeing", "breathing", "sleep", "focus"],
+    "featured": true
+  },
+  "Canvas": {
+    "title": "Wet Canvas",
+    "blurb": "Oil painting in the browser that behaves like paint: colours mix, smear and get picked up by the brush. Lessons included. Best on a tablet or computer.",
+    "category": "Worlds & Simulations",
+    "topics": ["simulation", "painting", "webgl", "art"],
+    "featured": true
   }
 }

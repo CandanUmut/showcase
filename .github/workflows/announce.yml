@@ -1,0 +1,50 @@
+name: Announce
+
+# Posts at most one queued announcement a day (announce/queue) to Mastodon and Bluesky.
+# Does nothing until the account secrets are set; see announce/README.md.
+on:
+  schedule:
+    - cron: '41 15 * * *'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Only print what would be posted'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: announce
+  cancel-in-progress: false
+
+jobs:
+  announce:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Post the next due announcement
+        run: node scripts/announce.mjs
+        env:
+          DRY_RUN: ${{ inputs.dry_run && '1' || '' }}
+          MASTODON_INSTANCE: ${{ secrets.MASTODON_INSTANCE }}
+          MASTODON_TOKEN: ${{ secrets.MASTODON_TOKEN }}
+          BLUESKY_HANDLE: ${{ secrets.BLUESKY_HANDLE }}
+          BLUESKY_APP_PASSWORD: ${{ secrets.BLUESKY_APP_PASSWORD }}
+
+      - name: Record what was posted
+        if: always()
+        run: |
+          if [ -n "$(git status --porcelain announce)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add announce
+            git commit -m "Announce: record posted links"
+            git push
+          fi
