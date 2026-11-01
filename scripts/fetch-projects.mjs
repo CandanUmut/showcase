@@ -610,6 +610,16 @@ async function main() {
   );
   log.info(`${candidates.length} with Pages enabled, not archived, not forks`);
 
+  // Picky: a repo needs a GitHub description or an entry in showcase.overrides.json to be shown,
+  // so a half-finished new site doesn't appear on its own.
+  for (let i = candidates.length - 1; i >= 0; i--) {
+    const r = candidates[i];
+    if (!overrides[r.name] && !(r.description || '').trim()) {
+      log.drop(`${r.name} — no description and no override, left off (add one to show it)`);
+      candidates.splice(i, 1);
+    }
+  }
+
   log.step('Resolving and verifying live URLs');
   const verified = [];
   await pool(candidates, 8, async (repo) => {

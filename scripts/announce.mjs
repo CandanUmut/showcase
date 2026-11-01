@@ -147,6 +147,9 @@ async function rotate(enabled) {
 
 async function buildPool(cfg) {
   const skip = new Set((cfg.skip ?? []).map((s) => s.toLowerCase()));
+  // Anything hidden on the showcase site is never announced either.
+  const overrides = JSON.parse(await readFile('showcase.overrides.json', 'utf8').catch(() => '{}'));
+  for (const [name, o] of Object.entries(overrides)) if (o?.hidden === true) skip.add(name.toLowerCase());
   const pool = Object.entries(cfg.apps ?? {})
     .filter(([app, v]) => !skip.has(app.toLowerCase()) && v.posts?.length)
     .map(([app, v]) => ({ app, url: v.url, posts: v.posts }));
