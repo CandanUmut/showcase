@@ -4,6 +4,21 @@ Once a day, `.github/workflows/announce.yml` posts the oldest **due** file in `q
 Mastodon and Bluesky, then moves it to `posted/` with links to the posts. At most one post a day,
 so followers see a steady trickle, not a flood. Nothing is posted until the accounts below are set up.
 
+## Daily rotation (when the queue is empty)
+
+When nothing in `queue/` is due, the workflow posts about one app from `apps.json` instead, forever:
+
+- The app posted longest ago (or never) goes next; ties go in the order listed in `apps.json`.
+- Each app has a few different posts; they are used in turn and start over once all are used.
+- New GitHub Pages sites on the account that aren't in `apps.json` get a short generic post made
+  from the **repo description** on GitHub. A repo with no description is not posted.
+- Repos in `skip` are never posted. A site whose link doesn't load is skipped that day.
+- `rotation.json` is written by the workflow: when each app was last posted, which posts were used,
+  and the links to recent posts. You don't need to edit it.
+
+To add better posts for an app, add it to `apps.json`. To stop an app, add its repo name to `skip`.
+A queued post always goes before the rotation.
+
 ## Queue a post
 
 Add `queue/YYYY-MM-DD-name.json` (it becomes due on that date, UTC):

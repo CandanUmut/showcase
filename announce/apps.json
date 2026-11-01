@@ -1,0 +1,418 @@
+{
+  "_comment": [
+    "Daily rotation, used when announce/queue has nothing due. One app a day: the app posted longest ago (or never) goes next,",
+    "in the order listed here; its posts are used in turn and start over once all are used.",
+    "Add an app: add an entry with its url and 2-3 posts (under 300 characters, include the link).",
+    "Stop an app: add its repo name to 'skip'. Live Pages sites not listed here get a generic post from the repo description."
+  ],
+  "owner": "CandanUmut",
+  "skip": [
+    "testforge",
+    "adilstore-webapps",
+    "3dbrotato",
+    "Brotatohtml",
+    "Consciousparticle",
+    "cosmic-sandbox",
+    "coin",
+    "pru_simulation_engine",
+    "Benefisocial",
+    "roulette",
+    "Readytodie",
+    "dontforget",
+    "Unmasking_sexual_engineered"
+  ],
+  "apps": {
+    "showcase": {
+      "url": "https://candanumut.github.io/showcase/",
+      "posts": [
+        "All my small web apps in one place: games, focus tools, simulations, faith and learning apps. Each one is free and runs in the browser. https://candanumut.github.io/showcase/ #opensource #webapps",
+        "I build small browser apps that each do one thing. Here's the full list, sorted by topic, so you can find the one you need. https://candanumut.github.io/showcase/ #indiedev #opensource",
+        "Looking for a free tool with nothing to install? I keep all my web apps on one page: focus, games, simulations, faith, learning. https://candanumut.github.io/showcase/ #opensource"
+      ]
+    },
+    "World": {
+      "url": "https://candanumut.github.io/World/",
+      "posts": [
+        "Walk, drive, sail or fly through a stylised version of the real planet. Buildings, roads, rivers and terrain come from OpenStreetMap. Free, in your browser. https://candanumut.github.io/World/ #OpenStreetMap #webgl",
+        "What if your own street were a video game level? World builds a stylised copy of the real planet from OpenStreetMap that you can explore freely. https://candanumut.github.io/World/ #gamedev #maps",
+        "A free browser world with a crisp old-game look, built from real map data: actual buildings, roads, water and trees. Pick a place and start exploring. https://candanumut.github.io/World/ #opensource #indiegame"
+      ]
+    },
+    "code-trainer": {
+      "url": "https://candanumut.github.io/code-trainer/",
+      "posts": [
+        "Learning Python for interviews? Short lessons teach one idea at a time, then interview-style problems let you use it. Your code runs in the browser, nothing to install. https://candanumut.github.io/code-trainer/ #Python #learntocode",
+        "A free Python trainer that runs real Python in your browser. Lessons first, then practice problems like the ones in coding interviews. https://candanumut.github.io/code-trainer/ #Python #opensource",
+        "No setup: open the page and start writing Python. Small steps for beginners, interview-style problems once you're ready. https://candanumut.github.io/code-trainer/ #Python #codinginterview"
+      ]
+    },
+    "Masjid": {
+      "url": "https://candanumut.github.io/Masjid/",
+      "posts": [
+        "A simple page for your local mosque: prayer times and congregation times, set by location and shared with one link. Free. https://candanumut.github.io/Masjid/ #mosque #salah",
+        "Run a small mosque or prayer room? Masjid shows the prayer times and the congregation times in one place, and you can share it as a link. https://candanumut.github.io/Masjid/ #Muslim #masjid",
+        "Prayer and jamaat times for your masjid, on a page anyone can open from a shared link. Free and open source. https://candanumut.github.io/Masjid/ #salah #Islam"
+      ]
+    },
+    "hexodrop": {
+      "url": "https://candanumut.github.io/hexodrop/",
+      "posts": [
+        "Tetris on a hexagonal hive that rotates under you. Gravity follows the glowing wall, so the board keeps turning while you plan. Free in the browser. https://candanumut.github.io/hexodrop/ #puzzlegame #indiegame",
+        "A falling-block puzzle with a twist: the board is a hex hive, and it rotates. Plan for one direction and gravity changes on you. https://candanumut.github.io/hexodrop/ #puzzle #webgame",
+        "Like Tetris, but you think in hexagons and the floor keeps moving. Hex Hive Drop, free to play in any browser. https://candanumut.github.io/hexodrop/ #indiedev #puzzlegame"
+      ]
+    },
+    "SwiftReader": {
+      "url": "https://candanumut.github.io/SwiftReader/",
+      "posts": [
+        "Read faster by seeing one word at a time. SwiftReader opens your PDF or EPUB, keeps a local library and notes, and nothing is uploaded. https://candanumut.github.io/SwiftReader/ #speedreading #privacy",
+        "A free speed-reading app that works on your own books: load a PDF or EPUB, set the pace, take notes. All in the browser, all on your device. https://candanumut.github.io/SwiftReader/ #reading #opensource",
+        "Got a pile of PDFs to get through? Flash them one word at a time at the speed you choose. Your files stay in your browser. https://candanumut.github.io/SwiftReader/ #productivity #reading"
+      ]
+    },
+    "loveofwisdom": {
+      "url": "https://candanumut.github.io/loveofwisdom/",
+      "posts": [
+        "A map of philosophy organised by question, not by philosopher. See where thinkers who never met ended up at the same answer. https://candanumut.github.io/loveofwisdom/ #philosophy",
+        "What do different traditions say about the same big question? Love of Wisdom lines up their positions side by side so you can compare. Free. https://candanumut.github.io/loveofwisdom/ #philosophy #opensource",
+        "Start with a question, not a name: Love of Wisdom maps philosophical positions across traditions and shows where they meet. https://candanumut.github.io/loveofwisdom/ #philosophy #learning"
+      ]
+    },
+    "fractaluni": {
+      "url": "https://candanumut.github.io/fractaluni/",
+      "posts": [
+        "Fly to a galaxy, pick a star, drop into its system, then land and walk on a planet that builds its terrain, water and wildlife as you arrive. Free, in the browser. https://candanumut.github.io/fractaluni/ #procedural #webgl",
+        "An endless procedural universe in a browser tab. Every star system is different, and you can go all the way down to a planet with herds and flocking birds. https://candanumut.github.io/fractaluni/ #gamedev #space",
+        "Fractal Universe: zoom from a whole galaxy down to standing on a planet's surface. It's deterministic, so the same star is always the same world. https://candanumut.github.io/fractaluni/ #space #procedural"
+      ]
+    },
+    "soundscope": {
+      "url": "https://candanumut.github.io/soundscope/",
+      "posts": [
+        "Is the room you're in quietly damaging your hearing? SoundScope turns your phone into a sound-level meter. Works offline, no account, no tracking. https://candanumut.github.io/soundscope/ #hearing #health",
+        "A free sound-level meter in your browser. Check how loud your gym, café or commute really is. Installs as an app and runs entirely on your device. https://candanumut.github.io/soundscope/ #noise #opensource",
+        "Noise damage to hearing is slow and silent. SoundScope measures the sound around you so you can see when it's too loud. Private, offline, free. https://candanumut.github.io/soundscope/ #hearinghealth"
+      ]
+    },
+    "qibla": {
+      "url": "https://candanumut.github.io/qibla/",
+      "posts": [
+        "Find the qibla without a working compass. Use your location and a landmark in the room to line up the direction. Free. https://candanumut.github.io/qibla/ #qibla #salah",
+        "Phone compass acting up indoors? Qibla Room Map uses your location, a map reference line and a quick room setup instead. https://candanumut.github.io/qibla/ #Muslim #Islam",
+        "Setting up a prayer space in a new room or hotel? Line the qibla up with a map and a landmark you can see, no compass needed. https://candanumut.github.io/qibla/ #travel #salah"
+      ]
+    },
+    "Pomodoro": {
+      "url": "https://candanumut.github.io/Pomodoro/",
+      "posts": [
+        "A pomodoro timer you can share. Open a room, send the link, and everyone works through the same 25 minutes together. https://candanumut.github.io/Pomodoro/ #pomodoro #focus",
+        "Study with friends from far away: Focus Rooms keeps everyone on the same pomodoro timer through one shared link. Free. https://candanumut.github.io/Pomodoro/ #studywithme #productivity",
+        "Working alone is easier when someone else is working too. Make a focus room, share the link, start the timer together. https://candanumut.github.io/Pomodoro/ #deepwork #pomodoro"
+      ]
+    },
+    "Scaleuniverse": {
+      "url": "https://candanumut.github.io/Scaleuniverse/",
+      "posts": [
+        "Zoom from below the atom to the edge of the observable universe in one smooth move, and see where you sit along the way. Free in the browser. https://candanumut.github.io/Scaleuniverse/ #science #space",
+        "How big is a cell next to a planet, or a planet next to a galaxy? Zoom through the whole scale of the universe and see. https://candanumut.github.io/Scaleuniverse/ #scicomm #astronomy",
+        "A good one for classrooms: Scale of the Universe zooms smoothly from atoms to the edge of the observable universe. https://candanumut.github.io/Scaleuniverse/ #education #science"
+      ]
+    },
+    "Habitcheck": {
+      "url": "https://candanumut.github.io/Habitcheck/",
+      "posts": [
+        "Tick off your habits in a couple of taps and watch the streak build. Everything stays in your browser: no sign-up, works offline. https://candanumut.github.io/Habitcheck/ #habits #privacy",
+        "A private habit tracker: quick daily check-ins, simple insights, gentle charts. Your data never leaves your device. https://candanumut.github.io/Habitcheck/ #habittracker #opensource",
+        "Want to track habits without another account and another cloud? Habitcheck is free, offline-first, and stores everything on your device. https://candanumut.github.io/Habitcheck/ #productivity #habits"
+      ]
+    },
+    "flashes": {
+      "url": "https://candanumut.github.io/flashes/",
+      "posts": [
+        "An English companion to Lem'alar (The Flashes) by Said Nursî: full text, search, cross-references and notes, for readers without Ottoman Turkish. https://candanumut.github.io/flashes/ #RisaleiNur #Islam",
+        "Reading the Risale-i Nur in English? The Flashes companion helps you navigate, search and remember a dense book. Free. https://candanumut.github.io/flashes/ #SaidNursi #Islam",
+        "A free study guide for The Flashes by Bediüzzaman Said Nursî, with search and notes so you can keep track of what you read. https://candanumut.github.io/flashes/ #RisaleiNur #reading"
+      ]
+    },
+    "Tournament": {
+      "url": "https://candanumut.github.io/Tournament/",
+      "posts": [
+        "Running a tournament from your phone? Type the teams, pick a format, and get a bracket you can share by link and update as results come in. https://candanumut.github.io/Tournament/ #sports #esports",
+        "A free bracket maker for small events: school games, office ping pong, game nights. Share one link and everyone sees the latest results. https://candanumut.github.io/Tournament/ #tournament",
+        "No more brackets on paper: make one in a minute, share the link, update scores as games finish. https://candanumut.github.io/Tournament/ #sports #webapp"
+      ]
+    },
+    "Climatechange": {
+      "url": "https://candanumut.github.io/Climatechange/",
+      "posts": [
+        "Pick your city and see its real temperature trend, air quality, rainfall and flood risk. The climate question, made local. https://candanumut.github.io/Climatechange/ #climate #data",
+        "What has the climate actually done where you live? Climate Reality Dashboard shows your city's data instead of global averages. https://candanumut.github.io/Climatechange/ #climatechange #opendata",
+        "A free dashboard for your own city: temperature trend, air quality, rain and flood risk on one page. https://candanumut.github.io/Climatechange/ #climate #dataviz"
+      ]
+    },
+    "Breath_aurora": {
+      "url": "https://candanumut.github.io/Breath_aurora/",
+      "posts": [
+        "Guided breathing, mudras and short movement sequences, with a visual that paces your breath so you don't have to count. Free. https://candanumut.github.io/Breath_aurora/ #breathwork #wellbeing",
+        "Follow the light: Breath Aurora shows you when to breathe in and out, so you can just breathe. https://candanumut.github.io/Breath_aurora/ #breathing #calm",
+        "A calm few minutes in your browser: breathing patterns, mudras and gentle movement, paced on screen. https://candanumut.github.io/Breath_aurora/ #mindfulness #breathwork"
+      ]
+    },
+    "Minetogether": {
+      "url": "https://candanumut.github.io/Minetogether/",
+      "posts": [
+        "Send miners down through layers of rock, upgrade the drills and the elevator, and climb a shared leaderboard. Or dig solo offline. https://candanumut.github.io/Minetogether/ #idlegame #indiegame",
+        "A small mining game for your browser: dig deeper, upgrade, compete on the leaderboard. Free. https://candanumut.github.io/Minetogether/ #idle #webgame",
+        "How deep can you dig? DeepMine Online: upgrade the drills, speed up the elevator, and race other players down. https://candanumut.github.io/Minetogether/ #gaming #indiedev"
+      ]
+    },
+    "complete_human": {
+      "url": "https://candanumut.github.io/complete_human/",
+      "posts": [
+        "A daily check-in across eight areas of life (body, mind, work, relationships and more) so progress in one doesn't quietly cost you another. https://candanumut.github.io/complete_human/ #selfimprovement #habits",
+        "Small improvements add up. The Complete Human helps you practise and track them across 8 connected parts of life, based on behavioural science. https://candanumut.github.io/complete_human/ #personaldevelopment",
+        "Doing great at work while sleep and friendships slip? A free daily tool to keep all eight areas of your life in view. https://candanumut.github.io/complete_human/ #wellbeing #balance"
+      ]
+    },
+    "one": {
+      "url": "https://candanumut.github.io/one/",
+      "posts": [
+        "A reading companion for One God, Many Prophets: full text, a timeline, a glossary, an evidence matrix, and a place for your own notes. https://candanumut.github.io/one/ #Islam #prophets",
+        "Read One God, Many Prophets with a timeline and glossary beside you, and keep your notes in the same place. Free. https://candanumut.github.io/one/ #reading #faith",
+        "A study companion for the book One God, Many Prophets, with an evidence matrix to follow the argument step by step. https://candanumut.github.io/one/ #faith #books"
+      ]
+    },
+    "Mathbomb": {
+      "url": "https://candanumut.github.io/Mathbomb/",
+      "posts": [
+        "Answer the sum before the bomb goes off in your hands, then throw it to the next person in the room. Math Bomb: a party game for quick heads. https://candanumut.github.io/Mathbomb/ #math #partygame",
+        "Mental math, but with pressure. Pass the bomb around and solve before it goes off. Good for classrooms and family nights. https://candanumut.github.io/Mathbomb/ #mathgame #education",
+        "Need a fun way to practise arithmetic? Math Bomb turns it into hot potato. Free, in the browser. https://candanumut.github.io/Mathbomb/ #math #games"
+      ]
+    },
+    "housing": {
+      "url": "https://candanumut.github.io/housing/",
+      "posts": [
+        "Why does housing cost what it does? A free explainer with the data behind each claim and calculators to test it against your own city. https://candanumut.github.io/housing/ #housing #economics",
+        "The housing crisis, explained with numbers you can check yourself, plus a look at the solutions. https://candanumut.github.io/housing/ #housingcrisis #policy",
+        "Don't take my word for it: this housing explainer comes with calculators so you can run the argument on your own city. https://candanumut.github.io/housing/ #housing #data"
+      ]
+    },
+    "Joyofliving": {
+      "url": "https://candanumut.github.io/Joyofliving/",
+      "posts": [
+        "A 30-question check-in on how life is actually going, in English or Turkish. Five minutes, repeat it weekly, nothing leaves your device. https://candanumut.github.io/Joyofliving/ #wellbeing #selfcheck",
+        "How are you, really? Joy of Living asks thirty honest questions, once a week, so you can see how things change. Private and free. https://candanumut.github.io/Joyofliving/ #mentalhealth",
+        "A weekly five-minute life check-up you can do on your phone. English or Turkish, stored only on your device. https://candanumut.github.io/Joyofliving/ #wellbeing"
+      ]
+    },
+    "earth-sim": {
+      "url": "https://candanumut.github.io/earth-sim/",
+      "posts": [
+        "Pick a country in 1900 and try to bring 60% of the world's population under your colours, through war, alliances, gifts and tech. Strategy in your browser. https://candanumut.github.io/earth-sim/ #strategy #grandstrategy",
+        "Every other country plays on its own and won't wait for you. Earth Sim: real-time-with-pause strategy from 1900, free in the browser. https://candanumut.github.io/earth-sim/ #strategygame #indiegame",
+        "Grand strategy without a download: choose a nation, make alliances, research tech, and grow. Earth Sim runs in any browser. https://candanumut.github.io/earth-sim/ #strategy #webgame"
+      ]
+    },
+    "RisksofAI": {
+      "url": "https://candanumut.github.io/RisksofAI/",
+      "posts": [
+        "A free course on what AI can and can't do, where it goes wrong, and how to work with it. Earn badges as you go, no account needed. https://candanumut.github.io/RisksofAI/ #AI #AIliteracy",
+        "Using AI at work or school? AIAware teaches its limits and risks in short steps, so you know when to trust it. https://candanumut.github.io/RisksofAI/ #AI #education",
+        "AI literacy for everyone: a short free course with badges, no sign-up. https://candanumut.github.io/RisksofAI/ #ArtificialIntelligence #learning"
+      ]
+    },
+    "Pusula": {
+      "url": "https://candanumut.github.io/Pusula/",
+      "posts": [
+        "A values compass for hard moments: daily quests, a focus list, and a panic button that gives you something to do in the ten seconds that matter. https://candanumut.github.io/Pusula/ #selfcontrol #habits",
+        "When an urge hits, the first seconds decide a lot. Pusula's panic button gives you a concrete step right then. Free. https://candanumut.github.io/Pusula/ #recovery #focus",
+        "Pusula means compass. Small daily quests and a focus list to keep you pointed at what you value. https://candanumut.github.io/Pusula/ #values #personaldevelopment"
+      ]
+    },
+    "boppo": {
+      "url": "https://candanumut.github.io/boppo/",
+      "posts": [
+        "Hit the lit buttons before the timer runs out. Four modes, including one where the rule changes on you mid-game. BopGrid, free in the browser. https://candanumut.github.io/boppo/ #casualgame #reflex",
+        "A quick reflex game for a short break: tap what lights up, beat the clock, and stay calm when the rules flip. https://candanumut.github.io/boppo/ #webgame #indiegame",
+        "How fast are your fingers? BopGrid has four modes, and one of them changes the rule halfway through. https://candanumut.github.io/boppo/ #games #reflexes"
+      ]
+    },
+    "Animalwellfare": {
+      "url": "https://candanumut.github.io/Animalwellfare/",
+      "posts": [
+        "What does US farm animal welfare law actually require? A readable paper on the rules, the gaps, and what closing them would cost, with sources attached. https://candanumut.github.io/Animalwellfare/ #animalwelfare #policy",
+        "The True Cost: an evidence-based look at how US law treats farm animals, and the reforms on the table. https://candanumut.github.io/Animalwellfare/ #animalwelfare #farming",
+        "Before you argue about factory farming, read what the law says. Free, interactive, sourced. https://candanumut.github.io/Animalwellfare/ #animals #policy"
+      ]
+    },
+    "Howold": {
+      "url": "https://candanumut.github.io/Howold/",
+      "posts": [
+        "Answer questions about how you sleep, move, feel and connect, and get an estimate of how old your body and mind are acting, apart from your birthday. https://candanumut.github.io/Howold/ #health #wellbeing",
+        "Your birthday says one age. Your habits might say another. Body & Mind Age gives you an estimate from how you actually live. https://candanumut.github.io/Howold/ #longevity #selfcheck",
+        "A free quiz on sleep, movement, mood and connection that estimates your body age and your mind age. https://candanumut.github.io/Howold/ #wellness"
+      ]
+    },
+    "marriagequiz": {
+      "url": "https://candanumut.github.io/marriagequiz/",
+      "posts": [
+        "A compatibility questionnaire built on marriage research, not vibes. It shows you your own assumptions before you commit to someone. https://candanumut.github.io/marriagequiz/ #marriage #relationships",
+        "Thinking about marriage? Hayırlısı helps you see what you actually expect from a spouse, with questions grounded in research. https://candanumut.github.io/marriagequiz/ #marriage",
+        "Know yourself before you choose someone. A free compatibility questionnaire based on what marriage research says matters. https://candanumut.github.io/marriagequiz/ #relationships"
+      ]
+    },
+    "Quizroom": {
+      "url": "https://candanumut.github.io/Quizroom/",
+      "posts": [
+        "Everyone in the room writes questions first, then you all take the quiz at once and see the scoreboard. Great for classrooms and long car trips. https://candanumut.github.io/Quizroom/ #quiz #partygame",
+        "A quiz game where the players make the questions. Ortak Quiz: write, play together, compare scores. https://candanumut.github.io/Quizroom/ #classroom #education",
+        "Teachers: let students write the quiz, then everyone plays it at once. Free, in the browser. https://candanumut.github.io/Quizroom/ #edtech #teachers"
+      ]
+    },
+    "newbrotato": {
+      "url": "https://candanumut.github.io/newbrotato/",
+      "posts": [
+        "A rogue-survivor arena in 3D: waves close in, you pick an upgrade each level, and a boss meter fills while you dash between them. Free in the browser. https://candanumut.github.io/newbrotato/ #roguelite #indiegame",
+        "Survive the wave, pick an upgrade, repeat, until the boss arrives. Nova Arena 3D, no download. https://candanumut.github.io/newbrotato/ #gamedev #roguelike",
+        "Short on time? Nova Arena 3D is a quick wave-survival game you can play right in your browser. https://candanumut.github.io/newbrotato/ #webgame #roguelite"
+      ]
+    },
+    "Truth-Knowability-Ethics-Benefit": {
+      "url": "https://candanumut.github.io/Truth-Knowability-Ethics-Benefit/",
+      "posts": [
+        "A tool for hard decisions: weigh what's true, what's right and what actually helps, and see where those three pull apart. https://candanumut.github.io/Truth-Knowability-Ethics-Benefit/ #ethics #decisions",
+        "Facing a hard choice? Truth · Ethics · Benefit walks you through three separate questions instead of one gut feeling. Free. https://candanumut.github.io/Truth-Knowability-Ethics-Benefit/ #philosophy",
+        "Based on my working paper on practical deliberation: an interactive way to judge a decision by truth, ethics and benefit, one at a time. https://candanumut.github.io/Truth-Knowability-Ethics-Benefit/ #ethics"
+      ]
+    },
+    "Transformyourlife": {
+      "url": "https://candanumut.github.io/Transformyourlife/",
+      "posts": [
+        "A gentle companion for changing a habit you're stuck in: daily steps, ready for relapses, and never scolding. https://candanumut.github.io/Transformyourlife/ #habits #recovery",
+        "Changing a habit is rarely a straight line. Transform Your Life plans for slips instead of punishing them. Free. https://candanumut.github.io/Transformyourlife/ #behaviorchange #habits",
+        "Small daily steps out of a habit you want to leave, built on evidence-based habit models. https://candanumut.github.io/Transformyourlife/ #selfimprovement"
+      ]
+    },
+    "AdilStore": {
+      "url": "https://candanumut.github.io/AdilStore/",
+      "posts": [
+        "A small app store for software that doesn't harvest you: handpicked tools, mindful games and spiritual companions, with the privacy terms up front. https://candanumut.github.io/AdilStore/ #privacy #apps",
+        "Tired of apps that track everything? AdilStore shows each app's privacy terms before you open it. https://candanumut.github.io/AdilStore/ #privacy #opensource",
+        "AdilStore: a hand-picked shelf of tools, calm games and faith apps, in English and Turkish. https://candanumut.github.io/AdilStore/ #apps #privacy"
+      ]
+    },
+    "Highorlow": {
+      "url": "https://candanumut.github.io/Highorlow/",
+      "posts": [
+        "Higher or lower, with cards from 1 to 21 and a countdown. Make a room, share the code, and race your friends for points. https://candanumut.github.io/Highorlow/ #partygame #cardgame",
+        "A quick multiplayer guessing game: HighLow 21. Share a room code and play together from your phones. https://candanumut.github.io/Highorlow/ #games",
+        "Need a quick game with friends? Guess higher or lower before the timer ends. Free in the browser. https://candanumut.github.io/Highorlow/ #partygame"
+      ]
+    },
+    "check": {
+      "url": "https://candanumut.github.io/check/",
+      "posts": [
+        "Forty questions for taking an honest account of yourself. In Turkish, works offline, and your answers never leave your device. https://candanumut.github.io/check/ #muhasebe #Islam",
+        "Mîzan Muhasebesi: a private self-reckoning in 40 questions, in Turkish. Nothing is uploaded. https://candanumut.github.io/check/ #nefismuhasebesi",
+        "For Turkish speakers: a quiet 40-question self-reckoning you can do offline, kept only on your phone. https://candanumut.github.io/check/ #muhasebe #Türkçe"
+      ]
+    },
+    "protocol": {
+      "url": "https://candanumut.github.io/protocol/",
+      "posts": [
+        "Close the Ramp: a step-by-step protocol for shutting down the on-ramps to a habit before you need willpower. Works offline, in English and Turkish. https://candanumut.github.io/protocol/ #habits #recovery",
+        "Willpower is the last line of defence. Close the Ramp helps you build the earlier ones. Free and offline. https://candanumut.github.io/protocol/ #selfcontrol",
+        "If a habit keeps winning, change what leads up to it. A free structured protocol, in English and Turkish. https://candanumut.github.io/protocol/ #behaviorchange"
+      ]
+    },
+    "zombie_game": {
+      "url": "https://candanumut.github.io/zombie_game/",
+      "posts": [
+        "Tap zombies to stop them, survive the wave, spend the money on turrets and upgrades. Then the boss shows up. Zombie Tap Defense, free in the browser. https://candanumut.github.io/zombie_game/ #zombies #towerdefense",
+        "A quick tap-and-defend game: hold off the waves, build turrets, survive the boss. https://candanumut.github.io/zombie_game/ #mobilegame #indiegame",
+        "Got a few minutes? Hold the line in Zombie Tap Defense. No download. https://candanumut.github.io/zombie_game/ #webgame"
+      ]
+    },
+    "Addiction_test": {
+      "url": "https://candanumut.github.io/Addiction_test/",
+      "posts": [
+        "A self-check for modern attachments: phone, food, spending, scrolling. It scores each area so you can see which one is the real problem. https://candanumut.github.io/Addiction_test/ #digitalwellbeing #selfcheck",
+        "Which habit has more of a hold on you than you think? Addiction Check scores you across several everyday areas. Free. https://candanumut.github.io/Addiction_test/ #habits",
+        "Phone? Snacks? Shopping? Take a free self-check and see which one pulls at you most. https://candanumut.github.io/Addiction_test/ #wellbeing"
+      ]
+    },
+    "hakikat_ucgeni": {
+      "url": "https://candanumut.github.io/hakikat_ucgeni/",
+      "posts": [
+        "Hakikat Üçgeni: a long study in Turkish of the three classic sources of temptation (the self, the world and the devil) and how they feed each other. https://candanumut.github.io/hakikat_ucgeni/ #nefis #Türkçe",
+        "Why is temptation so hard to resist? A Turkish-language study of the self, the world and the devil working together. https://candanumut.github.io/hakikat_ucgeni/ #Islam",
+        "For Turkish readers: a detailed study of nefis, dünya and şeytan, and how each one strengthens the others. https://candanumut.github.io/hakikat_ucgeni/ #nefis #İslam"
+      ]
+    },
+    "hifz": {
+      "url": "https://candanumut.github.io/hifz/",
+      "posts": [
+        "Memorising the Qur'an? Hifz hides the ayah, you recite, and spaced review brings it back right before you'd forget. Free, works offline. https://candanumut.github.io/hifz/ #Quran #hifz",
+        "Keeping what you've memorised is the hard part. Hifz schedules your review so old surahs don't fade. English and Turkish, no account. https://candanumut.github.io/hifz/ #Quran #opensource",
+        "A free hifz companion: recite from memory, check yourself, and let spaced review plan the rest. https://candanumut.github.io/hifz/ #hifz #Islam"
+      ]
+    },
+    "ClearMind": {
+      "url": "https://candanumut.github.io/ClearMind/",
+      "posts": [
+        "Five minutes of thinking practice a day instead of scrolling. Everyone gets the same puzzles on the same date, like Wordle. https://candanumut.github.io/ClearMind/ #brain #dailypuzzle",
+        "ClearMind: mental math, a true/false quiz where you also say how sure you are, and a daily intention. Free, no account. https://candanumut.github.io/ClearMind/ #thinking #puzzle",
+        "How good is your judgment? ClearMind asks how sure you are, then you can compare your answers with yesterday's and with other people's. https://candanumut.github.io/ClearMind/ #calibration"
+      ]
+    },
+    "myttcoach": {
+      "url": "https://candanumut.github.io/myttcoach/",
+      "posts": [
+        "Third Ball builds a table tennis training plan for your level, setup and schedule, and shows each stroke step by step with a 3D player. Free, works offline. https://candanumut.github.io/myttcoach/ #tabletennis #pingpong",
+        "Learning table tennis without a coach? Third Ball teaches each stroke with a 3D player and plans your practice. https://candanumut.github.io/myttcoach/ #tabletennis",
+        "Practise smarter at the table: a free training plan that fits your level and the time you have. Open source. https://candanumut.github.io/myttcoach/ #tabletennis #sports"
+      ]
+    },
+    "Freelay": {
+      "url": "https://candanumut.github.io/Freelay/",
+      "posts": [
+        "Trying to quit something? Freelay is a free tracker with daily check-ins, an urge log, and honest patterns. Everything stays on your phone. https://candanumut.github.io/Freelay/ #recovery #privacy",
+        "Log the urge, not just the slip. Freelay shows the patterns behind a habit you want to quit: scrolling, drinking, gambling and more. Offline, open source. https://candanumut.github.io/Freelay/ #habits",
+        "A private quit tracker that works offline and never uploads your data. Freelay, free and open source. https://candanumut.github.io/Freelay/ #recovery"
+      ]
+    },
+    "dua": {
+      "url": "https://candanumut.github.io/dua/",
+      "posts": [
+        "The duʿāʾ of the Prophets from the Qur'an and Sunnah: Arabic, transliteration, English and Turkish, and the moment each was said. https://candanumut.github.io/dua/ #dua #Islam",
+        "Looking for a duʿāʾ for a specific need? Find one by need, with the moment it was said. No ads, no tracking. https://candanumut.github.io/dua/ #dua #Quran",
+        "Sixty-three supplications from the Qur'an and authentic Sunnah, each with its moment. Free. https://candanumut.github.io/dua/ #dua #Muslim"
+      ]
+    },
+    "beats": {
+      "url": "https://candanumut.github.io/beats/",
+      "posts": [
+        "Steady: calm music and paced breathing to calm down, ride out an urge, relax, sleep or focus. Free in your browser, and your data stays on your device. https://candanumut.github.io/beats/ #breathwork #calm",
+        "Can't sleep or can't focus? Pick a goal in Steady and follow the breathing pace with music. Not medical care, just a calm tool. https://candanumut.github.io/beats/ #sleep #focus",
+        "A free browser app for the moments you need to settle down: music plus guided breathing. https://candanumut.github.io/beats/ #wellbeing #opensource"
+      ]
+    },
+    "growth": {
+      "url": "https://candanumut.github.io/growth/",
+      "posts": [
+        "GrowthPath: one small task a day in five areas (reach, community, writing, focus, craft), plus a journal and a kind streak. https://candanumut.github.io/growth/ #buildinpublic #indiehackers",
+        "For builders who ship: GrowthPath gives you one small daily step to grow your reach and your craft. Free, works offline. https://candanumut.github.io/growth/ #indiedev",
+        "Small steps, real growth, no judgment. A free daily tracker for people who make things. https://candanumut.github.io/growth/ #buildinpublic"
+      ]
+    },
+    "Canvas": {
+      "url": "https://candanumut.github.io/Canvas/",
+      "posts": [
+        "Wet Canvas: an oil painting simulator for the browser. Paint mixes like real pigment, blends wet-on-wet and builds up thick. https://candanumut.github.io/Canvas/ #digitalart #oilpainting",
+        "Want to try oil painting without buying paint? Wet Canvas has guided lessons and paint that mixes like the real thing. No sign-up, nothing uploaded. https://candanumut.github.io/Canvas/ #art #webgl",
+        "Thick paint, wet blending, colours that mix like real pigment, all in a browser tab. Free. https://candanumut.github.io/Canvas/ #oilpainting #digitalpainting"
+      ]
+    }
+  }
+}

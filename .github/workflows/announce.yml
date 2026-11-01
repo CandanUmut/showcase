@@ -1,6 +1,7 @@
 name: Announce
 
-# Posts at most one queued announcement a day (announce/queue) to Mastodon and Bluesky.
+# Posts one announcement a day to Mastodon and Bluesky: the oldest due file in announce/queue,
+# or, when the queue is empty, the next app in the daily rotation (announce/apps.json).
 # Does nothing until the account secrets are set; see announce/README.md.
 on:
   schedule:
@@ -37,6 +38,7 @@ jobs:
           MASTODON_TOKEN: ${{ secrets.MASTODON_TOKEN }}
           BLUESKY_HANDLE: ${{ secrets.BLUESKY_HANDLE }}
           BLUESKY_APP_PASSWORD: ${{ secrets.BLUESKY_APP_PASSWORD }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # only to list the account's public Pages sites
 
       - name: Record what was posted
         if: always()
