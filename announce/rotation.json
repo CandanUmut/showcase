@@ -8,15 +8,28 @@
     "https://candanumut.github.io/beats": "2026-11-05",
     "https://candanumut.github.io/growth": "2026-11-06",
     "https://candanumut.github.io/canvas": "2026-11-07",
-    "https://candanumut.github.io/showcase": "2026-11-08"
+    "https://candanumut.github.io/showcase": "2026-11-08",
+    "https://candanumut.github.io/reflection": "2026-11-09"
   },
   "used": {
     "showcase": [
+      0
+    ],
+    "reflection": [
       0
     ]
   },
   "pending": null,
   "history": [
+    {
+      "date": "2026-11-09",
+      "app": "reflection",
+      "variant": 0,
+      "links": {
+        "mastodon": "https://mastodon.social/@umtcndan/117589165593091212",
+        "bluesky": "https://bsky.app/profile/umutcandan.bsky.social/post/3mzw4llzdng2q"
+      }
+    },
     {
       "date": "2026-11-08",
       "app": "showcase",
