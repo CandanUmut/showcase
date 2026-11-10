@@ -9,7 +9,8 @@
     "https://candanumut.github.io/growth": "2026-11-06",
     "https://candanumut.github.io/canvas": "2026-11-07",
     "https://candanumut.github.io/showcase": "2026-11-08",
-    "https://candanumut.github.io/reflection": "2026-11-09"
+    "https://candanumut.github.io/reflection": "2026-11-09",
+    "https://candanumut.github.io/world": "2026-11-10"
   },
   "used": {
     "showcase": [
@@ -17,10 +18,22 @@
     ],
     "reflection": [
       0
+    ],
+    "World": [
+      0
     ]
   },
   "pending": null,
   "history": [
+    {
+      "date": "2026-11-10",
+      "app": "World",
+      "variant": 0,
+      "links": {
+        "mastodon": "https://mastodon.social/@umtcndan/117594252654803291",
+        "bluesky": "https://bsky.app/profile/umutcandan.bsky.social/post/3mzyeuxffiz2y"
+      }
+    },
     {
       "date": "2026-11-09",
       "app": "reflection",
