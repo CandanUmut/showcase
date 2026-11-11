@@ -10,7 +10,8 @@
     "https://candanumut.github.io/canvas": "2026-11-07",
     "https://candanumut.github.io/showcase": "2026-11-08",
     "https://candanumut.github.io/reflection": "2026-11-09",
-    "https://candanumut.github.io/world": "2026-11-10"
+    "https://candanumut.github.io/world": "2026-11-10",
+    "https://candanumut.github.io/code-trainer": "2026-11-11"
   },
   "used": {
     "showcase": [
@@ -21,10 +22,22 @@
     ],
     "World": [
       0
+    ],
+    "code-trainer": [
+      0
     ]
   },
   "pending": null,
   "history": [
+    {
+      "date": "2026-11-11",
+      "app": "code-trainer",
+      "variant": 0,
+      "links": {
+        "mastodon": "https://mastodon.social/@umtcndan/117600110189442241",
+        "bluesky": "https://bsky.app/profile/umutcandan.bsky.social/post/3n22y4n2udh2p"
+      }
+    },
     {
       "date": "2026-11-10",
       "app": "World",
