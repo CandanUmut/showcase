@@ -11,7 +11,8 @@
     "https://candanumut.github.io/showcase": "2026-11-08",
     "https://candanumut.github.io/reflection": "2026-11-09",
     "https://candanumut.github.io/world": "2026-11-10",
-    "https://candanumut.github.io/code-trainer": "2026-11-11"
+    "https://candanumut.github.io/code-trainer": "2026-11-11",
+    "https://candanumut.github.io/masjid": "2026-11-12"
   },
   "used": {
     "showcase": [
@@ -25,10 +26,22 @@
     ],
     "code-trainer": [
       0
+    ],
+    "Masjid": [
+      0
     ]
   },
   "pending": null,
   "history": [
+    {
+      "date": "2026-11-12",
+      "app": "Masjid",
+      "variant": 0,
+      "links": {
+        "mastodon": "https://mastodon.social/@umtcndan/117605694397738939",
+        "bluesky": "https://bsky.app/profile/umutcandan.bsky.social/post/3n25hi2mxbo2b"
+      }
+    },
     {
       "date": "2026-11-11",
       "app": "code-trainer",
