@@ -13,7 +13,8 @@
     "https://candanumut.github.io/world": "2026-11-10",
     "https://candanumut.github.io/code-trainer": "2026-11-11",
     "https://candanumut.github.io/masjid": "2026-11-12",
-    "https://candanumut.github.io/hexodrop": "2026-11-13"
+    "https://candanumut.github.io/hexodrop": "2026-11-13",
+    "https://candanumut.github.io/swiftreader": "2026-11-14"
   },
   "used": {
     "showcase": [
@@ -33,10 +34,22 @@
     ],
     "hexodrop": [
       0
+    ],
+    "SwiftReader": [
+      0
     ]
   },
   "pending": null,
   "history": [
+    {
+      "date": "2026-11-14",
+      "app": "SwiftReader",
+      "variant": 0,
+      "links": {
+        "mastodon": "https://mastodon.social/@umtcndan/117616583359046500",
+        "bluesky": "https://bsky.app/profile/umutcandan.bsky.social/post/3n2cc7rbmu42d"
+      }
+    },
     {
       "date": "2026-11-13",
       "app": "hexodrop",
