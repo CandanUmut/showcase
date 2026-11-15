@@ -14,7 +14,8 @@
     "https://candanumut.github.io/code-trainer": "2026-11-11",
     "https://candanumut.github.io/masjid": "2026-11-12",
     "https://candanumut.github.io/hexodrop": "2026-11-13",
-    "https://candanumut.github.io/swiftreader": "2026-11-14"
+    "https://candanumut.github.io/swiftreader": "2026-11-14",
+    "https://candanumut.github.io/loveofwisdom": "2026-11-15"
   },
   "used": {
     "showcase": [
@@ -37,10 +38,22 @@
     ],
     "SwiftReader": [
       0
+    ],
+    "loveofwisdom": [
+      0
     ]
   },
   "pending": null,
   "history": [
+    {
+      "date": "2026-11-15",
+      "app": "loveofwisdom",
+      "variant": 0,
+      "links": {
+        "mastodon": "https://mastodon.social/@umtcndan/117622359783820320",
+        "bluesky": "https://bsky.app/profile/umutcandan.bsky.social/post/3n2eucltv2e2d"
+      }
+    },
     {
       "date": "2026-11-14",
       "app": "SwiftReader",
