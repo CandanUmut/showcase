@@ -16,7 +16,8 @@
     "https://candanumut.github.io/hexodrop": "2026-11-13",
     "https://candanumut.github.io/swiftreader": "2026-11-14",
     "https://candanumut.github.io/loveofwisdom": "2026-11-15",
-    "https://candanumut.github.io/fractaluni": "2026-11-16"
+    "https://candanumut.github.io/fractaluni": "2026-11-16",
+    "https://candanumut.github.io/soundscope": "2026-11-17"
   },
   "used": {
     "showcase": [
@@ -45,10 +46,22 @@
     ],
     "fractaluni": [
       0
+    ],
+    "soundscope": [
+      0
     ]
   },
   "pending": null,
   "history": [
+    {
+      "date": "2026-11-17",
+      "app": "soundscope",
+      "variant": 0,
+      "links": {
+        "mastodon": "https://mastodon.social/@umtcndan/117634294895555391",
+        "bluesky": "https://bsky.app/profile/umutcandan.bsky.social/post/3n2k5w23wok2p"
+      }
+    },
     {
       "date": "2026-11-16",
       "app": "fractaluni",
