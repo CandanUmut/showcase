@@ -18,7 +18,8 @@
     "https://candanumut.github.io/loveofwisdom": "2026-11-15",
     "https://candanumut.github.io/fractaluni": "2026-11-16",
     "https://candanumut.github.io/soundscope": "2026-11-17",
-    "https://candanumut.github.io/qibla": "2026-11-18"
+    "https://candanumut.github.io/qibla": "2026-11-18",
+    "https://candanumut.github.io/pomodoro": "2026-11-19"
   },
   "used": {
     "showcase": [
@@ -53,10 +54,22 @@
     ],
     "qibla": [
       0
+    ],
+    "Pomodoro": [
+      0
     ]
   },
   "pending": null,
   "history": [
+    {
+      "date": "2026-11-19",
+      "app": "Pomodoro",
+      "variant": 0,
+      "links": {
+        "mastodon": "https://mastodon.social/@umtcndan/117645529799464550",
+        "bluesky": "https://bsky.app/profile/umutcandan.bsky.social/post/3n2p5l3k55d26"
+      }
+    },
     {
       "date": "2026-11-18",
       "app": "qibla",
