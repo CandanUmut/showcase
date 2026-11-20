@@ -19,7 +19,8 @@
     "https://candanumut.github.io/fractaluni": "2026-11-16",
     "https://candanumut.github.io/soundscope": "2026-11-17",
     "https://candanumut.github.io/qibla": "2026-11-18",
-    "https://candanumut.github.io/pomodoro": "2026-11-19"
+    "https://candanumut.github.io/pomodoro": "2026-11-19",
+    "https://candanumut.github.io/scaleuniverse": "2026-11-20"
   },
   "used": {
     "showcase": [
@@ -57,10 +58,22 @@
     ],
     "Pomodoro": [
       0
+    ],
+    "Scaleuniverse": [
+      0
     ]
   },
   "pending": null,
   "history": [
+    {
+      "date": "2026-11-20",
+      "app": "Scaleuniverse",
+      "variant": 0,
+      "links": {
+        "mastodon": "https://mastodon.social/@umtcndan/117651094367978939",
+        "bluesky": "https://bsky.app/profile/umutcandan.bsky.social/post/3n2rmnkiwdg2a"
+      }
+    },
     {
       "date": "2026-11-19",
       "app": "Pomodoro",
