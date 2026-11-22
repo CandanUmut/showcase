@@ -21,7 +21,8 @@
     "https://candanumut.github.io/qibla": "2026-11-18",
     "https://candanumut.github.io/pomodoro": "2026-11-19",
     "https://candanumut.github.io/scaleuniverse": "2026-11-20",
-    "https://candanumut.github.io/habitcheck": "2026-11-21"
+    "https://candanumut.github.io/habitcheck": "2026-11-21",
+    "https://candanumut.github.io/flashes": "2026-11-22"
   },
   "used": {
     "showcase": [
@@ -65,10 +66,22 @@
     ],
     "Habitcheck": [
       0
+    ],
+    "flashes": [
+      0
     ]
   },
   "pending": null,
   "history": [
+    {
+      "date": "2026-11-22",
+      "app": "flashes",
+      "variant": 0,
+      "links": {
+        "mastodon": "https://mastodon.social/@umtcndan/117662158423741409",
+        "bluesky": "https://bsky.app/profile/umutcandan.bsky.social/post/3n2wjuvxa5e2f"
+      }
+    },
     {
       "date": "2026-11-21",
       "app": "Habitcheck",
