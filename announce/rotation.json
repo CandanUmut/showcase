@@ -22,7 +22,8 @@
     "https://candanumut.github.io/pomodoro": "2026-11-19",
     "https://candanumut.github.io/scaleuniverse": "2026-11-20",
     "https://candanumut.github.io/habitcheck": "2026-11-21",
-    "https://candanumut.github.io/flashes": "2026-11-22"
+    "https://candanumut.github.io/flashes": "2026-11-22",
+    "https://candanumut.github.io/tournament": "2026-11-24"
   },
   "used": {
     "showcase": [
@@ -69,10 +70,22 @@
     ],
     "flashes": [
       0
+    ],
+    "Tournament": [
+      0
     ]
   },
   "pending": null,
   "history": [
+    {
+      "date": "2026-11-24",
+      "app": "Tournament",
+      "variant": 0,
+      "links": {
+        "mastodon": "https://mastodon.social/@umtcndan/117669077379852595",
+        "bluesky": "https://bsky.app/profile/umutcandan.bsky.social/post/3n2zm7bs5he2k"
+      }
+    },
     {
       "date": "2026-11-22",
       "app": "flashes",
