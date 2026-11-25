@@ -24,7 +24,8 @@
     "https://candanumut.github.io/habitcheck": "2026-11-21",
     "https://candanumut.github.io/flashes": "2026-11-22",
     "https://candanumut.github.io/tournament": "2026-11-24",
-    "https://candanumut.github.io/climatechange": "2026-11-25"
+    "https://candanumut.github.io/climatechange": "2026-11-25",
+    "https://candanumut.github.io/breath_aurora": "2026-11-25"
   },
   "used": {
     "showcase": [
@@ -77,10 +78,22 @@
     ],
     "Climatechange": [
       0
+    ],
+    "Breath_aurora": [
+      0
     ]
   },
   "pending": null,
   "history": [
+    {
+      "date": "2026-11-25",
+      "app": "Breath_aurora",
+      "variant": 0,
+      "links": {
+        "mastodon": "https://mastodon.social/@umtcndan/117679744839443511",
+        "bluesky": "https://bsky.app/profile/umutcandan.bsky.social/post/3n36dsbzr2l23"
+      }
+    },
     {
       "date": "2026-11-25",
       "app": "Climatechange",
