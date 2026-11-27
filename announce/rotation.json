@@ -26,7 +26,8 @@
     "https://candanumut.github.io/tournament": "2026-11-24",
     "https://candanumut.github.io/climatechange": "2026-11-25",
     "https://candanumut.github.io/breath_aurora": "2026-11-25",
-    "https://candanumut.github.io/minetogether": "2026-11-26"
+    "https://candanumut.github.io/minetogether": "2026-11-26",
+    "https://candanumut.github.io/complete_human": "2026-11-27"
   },
   "used": {
     "showcase": [
@@ -85,10 +86,22 @@
     ],
     "Minetogether": [
       0
+    ],
+    "complete_human": [
+      0
     ]
   },
   "pending": null,
   "history": [
+    {
+      "date": "2026-11-27",
+      "app": "complete_human",
+      "variant": 0,
+      "links": {
+        "mastodon": "https://mastodon.social/@umtcndan/117691056697906876",
+        "bluesky": "https://bsky.app/profile/umutcandan.bsky.social/post/3n3dekcrrqk24"
+      }
+    },
     {
       "date": "2026-11-26",
       "app": "Minetogether",
